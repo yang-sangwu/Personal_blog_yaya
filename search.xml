@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>用hexo中的matery主题搭建个人博客（完整版）</title>
+      <link href="/Personal-blog-wzz/2022/11/25/%E7%94%A8hexo%E4%B8%AD%E7%9A%84matery%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%89/"/>
+      <url>/Personal-blog-wzz/2022/11/25/%E7%94%A8hexo%E4%B8%AD%E7%9A%84matery%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%AE%8C%E6%95%B4%E7%89%88%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<span id="more"></span><h1 id="1-初始化搭建："><a href="#1-初始化搭建：" class="headerlink" title="1.初始化搭建："></a>1.初始化搭建：</h1><p><a href="https://blog.csdn.net/m0_46210779/article/details/123261065?spm=1001.2014.3001.5506" title="使用 gitee | github + hexo 快速搭建 hexo-theme-matery 闪烁之狐主题の个人博客_扶摇而上者九万里的博客-CSDN博客">使用 gitee | github + hexo 快速搭建 hexo-theme-matery 闪烁之狐主题の个人博客_扶摇而上者九万里的博客-CSDN博客</a></p><blockquote><p>注意：gitee搭建需要实名认证，github不需要但访问较慢</p></blockquote><h1 id="2-优化主题个性化："><a href="#2-优化主题个性化：" class="headerlink" title="2.优化主题个性化："></a>2.优化主题个性化：</h1><p><a href="https://blog.csdn.net/kuashijidexibao/article/details/112971657?spm=1001.2014.3001.5506" title="Hexo-Matery主题细致美化_marma1ade的博客-CSDN博客">Hexo-Matery主题细致美化_marma1ade的博客-CSDN博客</a></p><blockquote><p>注意：美化主题的博客很多，可自行搜索</p></blockquote><h1 id="3-将CSND的文章转出md格式部署个人博客上："><a href="#3-将CSND的文章转出md格式部署个人博客上：" class="headerlink" title="3.将CSND的文章转出md格式部署个人博客上："></a>3.将CSND的文章转出md格式部署个人博客上：</h1><p><a href="https://sliing.blog.csdn.net/article/details/122628848?spm=1001.2014.3001.5506" title="CSDN博客迁移到HEXO_fFee-ops的博客-CSDN博客">CSDN博客迁移到HEXO_fFee-ops的博客-CSDN博客</a></p><h1 id="4-效果展示："><a href="#4-效果展示：" class="headerlink" title="4.效果展示："></a>4.效果展示：</h1><p>github：<a href="https://wzz778.github.io/github_personal_blog/" title="阿泽的个人博客">阿泽的个人博客</a></p><p>gitee：<a href="http://zezhengyyds.gitee.io/Personal-blog-wzz%EF%BC%88%E5%AE%A1%E6%A0%B8%E4%B8%AD%EF%BC%89">http://zezhengyyds.gitee.io/Personal-blog-wzz（审核中）</a></p><h1 id="结束！"><a href="#结束！" class="headerlink" title="结束！"></a>结束！</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 周记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>用node建立websocket通信实现聊天室</title>
       <link href="/Personal-blog-wzz/2022/11/19/%E7%94%A8node%E5%BB%BA%E7%AB%8Bwebsocket%E9%80%9A%E4%BF%A1%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4/"/>
       <url>/Personal-blog-wzz/2022/11/19/%E7%94%A8node%E5%BB%BA%E7%AB%8Bwebsocket%E9%80%9A%E4%BF%A1%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%AE%A4/</url>
