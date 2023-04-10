@@ -1,0 +1,1530 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="浅浅的计算机网络知识, 牙牙的个人博客">
+    <meta name="description" content="
+
+目录
+计算机网络（连接分散计算机设备以实现信息传递的系统）_百度百科
+传输协议
+传输层次
+通信
+计算机网络协议分层结构
+开放系统互连参考模型的特点
+IPv4协议
+IPv6协议
+FTP
+HTTP
+网络传输协议
+较为系统框架
+
+先面向百度搭">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>浅浅的计算机网络知识 | 牙牙的个人博客</title>
+    <link rel="icon" type="image/png" href="/personal-blog-wzz/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/my.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/personal-blog-wzz/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/personal-blog-wzz/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/reward.css">
+    
+
+
+
+    <script src="/personal-blog-wzz/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+ 
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+</script>
+
+ 
+<body>
+    
+        <div id="loading-container">
+             <p class="loading-text">嘘~  正在从服务器偷取页面 . . . </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+                    
+                    <img src="/personal-blog-wzz/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">牙牙的个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/personal-blog-wzz/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">牙牙的个人博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/personal-blog-wzz/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">浅浅的计算机网络知识</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/personal-blog-wzz/tags/%E7%BD%91%E7%BB%9C-tcp-ip-udp/">
+                                <span class="chip bg-color">网络 tcp/ip udp</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/personal-blog-wzz/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="post-category">
+                                java开发框架
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-12-01
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/personal-blog-wzz/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <span id="more"></span>
+
+<p><strong>目录</strong></p>
+<p><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%88%E8%BF%9E%E6%8E%A5%E5%88%86%E6%95%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AE%BE%E5%A4%87%E4%BB%A5%E5%AE%9E%E7%8E%B0%E4%BF%A1%E6%81%AF%E4%BC%A0%E9%80%92%E7%9A%84%E7%B3%BB%E7%BB%9F%EF%BC%89_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91">计算机网络（连接分散计算机设备以实现信息传递的系统）_百度百科</a></p>
+<p><a href="#%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">传输协议</a></p>
+<p><a href="#%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1">传输层次</a></p>
+<p><a href="#%E9%80%9A%E4%BF%A1">通信</a></p>
+<p><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84">计算机网络协议分层结构</a></p>
+<p><a href="#%E5%BC%80%E6%94%BE%E7%B3%BB%E7%BB%9F%E4%BA%92%E8%BF%9E%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%89%B9%E7%82%B9">开放系统互连参考模型的特点</a></p>
+<p><a href="#IPv4%E5%8D%8F%E8%AE%AE">IPv4协议</a></p>
+<p><a href="#IPv6%E5%8D%8F%E8%AE%AE">IPv6协议</a></p>
+<p><a href="#FTP">FTP</a></p>
+<p><a href="#HTTP">HTTP</a></p>
+<p><a href="#%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">网络传输协议</a></p>
+<p><a href="#%E8%BE%83%E4%B8%BA%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6">较为系统框架</a></p>
+<hr>
+<p>先面向百度搭建理解框架</p>
+<h2 id="计算机网络（连接分散计算机设备以实现信息传递的系统）-百度百科"><a href="#计算机网络（连接分散计算机设备以实现信息传递的系统）-百度百科" class="headerlink" title="计算机网络（连接分散计算机设备以实现信息传递的系统）_百度百科"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/18763?fr=aladdin" title="计算机网络（连接分散计算机设备以实现信息传递的系统）_百度百科">计算机网络（连接分散计算机设备以实现信息传递的系统）_百度百科</a></h2><h2 id="传输协议"><a href="#传输协议" class="headerlink" title="传输协议"></a>传输协议</h2><p>按照百度的解释是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/8048821?fr=aladdin" title="传输协议_百度百科">传输协议_百度百科</a><img src="https://img-blog.csdnimg.cn/9e470f98ed904787a9ad8369779c4334.png"></p>
+<p>下层能够向上层提供的服务有两种形式：面向连接的服务（TCP）和无连接的服务(UDP)。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/TCP?fromModule=lemma_inlink" title="TCP">TCP</a>：传输控制协议，当传输出现错误时能自动予以纠正；</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/UDP?fromModule=lemma_inlink" title="UDP">UDP</a>：用户数据包（报）协议，当传输出现错误时会将<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF?fromModule=lemma_inlink" title="错误信息">错误信息</a>丢弃；</p>
+<p>UDP方式比TCP方式有更强大的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AE%B9%E9%94%99%E6%80%A7?fromModule=lemma_inlink" title="容错性">容错性</a>，采用UDP的话，它的缓冲速度比TCP快45%，而且可以大大的节省网络共享带宽，当网络出现不稳定时，不会经常出现缓冲，所以不少影视节目采用UDP方式传送。</p>
+<h2 id="传输层次"><a href="#传输层次" class="headerlink" title="传输层次"></a><strong>传输层次</strong></h2><p>传输层是两台计算机经过网络进行<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/897073?fromModule=lemma_inlink" title="数据通信">数据通信</a>时,第一个端到端的层次，具有缓冲作用。当网络层服务质量不能满足要求时，它将服务加以提高，以满足高层的要求；当网络层服务质量较好时，它只用很少的工作。传输层还可进行复用，即在一个网络连接上创建多个逻辑连接。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82%E6%AC%A1/12652424" title="传输层次_百度百科">传输层次_百度百科</a></p>
+<h2 id="通信"><a href="#通信" class="headerlink" title="通信"></a><strong>通信</strong></h2><p>指人与人或人与自然之间通过某种行为或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%AA%92%E4%BB%8B/5378050?fromModule=lemma_inlink" title="媒介">媒介</a>进行的信息交流与传递，从广义上指需要信息的双方或多方在不违背各自意愿的情况下采用任意方法、任意媒质，将信息从某方准确安全地传送到另方 。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%80%9A%E4%BF%A1/300982?fr=aladdin" title="通信（科学概念）_百度百科">通信（科学概念）_百度百科</a></p>
+<h2 id="计算机网络协议分层结构"><a href="#计算机网络协议分层结构" class="headerlink" title="计算机网络协议分层结构"></a><strong>计算机网络协议分层结构</strong></h2><p>从<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1?fromModule=lemma_inlink" title="网络通信">网络通信</a>原理角度可以把网络分为5层，即<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E5%B1%82?fromModule=lemma_inlink" title="应用层">应用层</a>（Application layer,A)、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82?fromModule=lemma_inlink" title="传输层">传输层</a>（Transport layer,T)网络层（Network layer,N)、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E8%BF%9E%E6%8E%A5?fromModule=lemma_inlink" title="数据连接">数据连接</a>层（Data link layer,D)和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%89%A9%E7%90%86%E5%B1%82?fromModule=lemma_inlink" title="物理层">物理层</a>（Physical layer,Ph)。 </p>
+<p>应用层：应用程序间沟通的层，如简单电子邮件传输（SMTP）、文件传输协议（FTP）、网络远程访问协议（Telnet）、超文本传输协议（HTTP）、可扩展通讯和表示协议（XMPP）等。</p>
+<p>传输层：在此层中，它提供了节点间的数据传送服务，如传输控制协议（TCP）、用户数据报协议（UDP）等，TCP 和 UDP 给数据包加入传输数据并把它传输到下一层中，这一层负责传送数据，并且确定数据已被送达并接收。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E5%B1%82/4329788" title="应用层（因特网）_百度百科">应用层（因特网）_百度百科</a></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82%E7%BB%93%E6%9E%84/7914046?fr=aladdin" title="计算机网络协议分层结构_百度百科">计算机网络协议分层结构_百度百科</a></p>
+<p>上面说的是<strong>五层体系结构</strong>，五层协议是OSI和TCP&#x2F;IP的综合，实际应用还是TCP&#x2F;IP的四层结构，其他的还有<strong>OSI七层模型</strong>（开放系统互连参考模型 (Open System Interconnect 简称OSI）），<strong>TCP&#x2F;IP四层模型</strong>。</p>
+<p>ISO制定的OSI参考模型的过于庞大、复杂招致了许多批评。与此对照,由技术人员自己开发的TCP&#x2F;IP协议栈获得了更为广泛的应用。如下图所示，是TCP&#x2F;IP参考模型和OSI参考模型的对比示意图：</p>
+<p><img src="https://img-blog.csdnimg.cn/dbb78cfd8d0840808b281c2d0b538605.png"></p>
+<h2 id="开放系统互连参考模型的特点"><a href="#开放系统互连参考模型的特点" class="headerlink" title="开放系统互连参考模型的特点"></a><strong>开放系统互连参考模型的特点</strong></h2><p>①每层的对应实体之间都通过各自的协议进行通信。 </p>
+<p>②各个计算机系统都有相同的层次结构。 </p>
+<p>③不同系统的相应层次具有相同的功能。 </p>
+<p>④同一系统的各层次之间通过接口联系。 </p>
+<p>⑤相邻的两层之间，下层为上层提供服务，上层使用下层提供的服务。</p>
+<h2 id="IPv4协议"><a href="#IPv4协议" class="headerlink" title="IPv4协议"></a><strong>IPv4协议</strong></h2><p><strong>网际协议版本4</strong>（英语：<strong>I</strong>nternet <strong>P</strong>rotocol <strong>v</strong>ersion <strong>4</strong>，<strong>IPv4</strong>），又称<strong>互联网通信协议第四版</strong>，是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE?fromModule=lemma_inlink" title="网际协议">网际协议</a>开发过程中的第四个修订版本，也是此协议第一个被广泛部署的版本。IPv4是互联网的核心，也是使用最广泛的网际协议版本，其后继版本为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv6?fromModule=lemma_inlink" title="IPv6">IPv6</a>，直到2011年，IANA IPv4位址完全用尽时，IPv6仍处在部署的初期。</p>
+<p>IPv4在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IETF?fromModule=lemma_inlink" title="IETF">IETF</a>于1981年9月发布的 RFC 791 中被描述，此RFC替换了于1980年1月发布的 RFC 760。</p>
+<p>IPv4是一种<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%97%A0%E8%BF%9E%E6%8E%A5?fromModule=lemma_inlink" title="无连接">无连接</a>的协议，操作在使用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2?fromModule=lemma_inlink" title="分组交换">分组交换</a>的链路层（如<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BB%A5%E5%A4%AA%E7%BD%91?fromModule=lemma_inlink" title="以太网">以太网</a>）上。此协议会尽最大努力交付数据包，意即它不保证任何数据包均能送达目的地，也不保证所有数据包均按照正确的顺序无重复地到达。这些方面是由上层的传输协议（如<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE?fromModule=lemma_inlink" title="传输控制协议">传输控制协议</a>）处理的。</p>
+<p>2019年11月26日，全球所有43亿个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv4%E5%9C%B0%E5%9D%80/16742558?fromModule=lemma_inlink" title="IPv4地址">IPv4地址</a>已分配完毕，这意味着没有更多的IPv4地址可以分配给ISP和其他大型网络基础设施提供商。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv4/422599?fromtitle=IPv4%E5%8D%8F%E8%AE%AE&fromid=5927589" title="IPv4_百度百科">IPv4_百度百科</a></p>
+<h2 id="IPv6协议"><a href="#IPv6协议" class="headerlink" title="IPv6协议"></a><strong>IPv6协议</strong></h2><p>IPv6是英文“Internet Protocol Version 6”（互联网协议第6版）的缩写，是互联网工程任务组（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IETF/2800318?fromModule=lemma_inlink" title="IETF">IETF</a>）设计的用于替代<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv4/422599?fromModule=lemma_inlink" title="IPv4">IPv4</a>的下一代IP协议，其地址数量号称可以为全世界的每一粒沙子编上一个地址 。</p>
+<p>由于IPv4最大的问题在于网络地址资源不足，严重制约了互联网的应用和发展。IPv6的使用，不仅能解决网络地址资源数量的问题，而且也解决了多种接入设备连入互联网的障碍  。</p>
+<p>互联网数字分配机构（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IANA/2800158?fromModule=lemma_inlink" title="IANA">IANA</a>）在2016年已向国际互联网工程任务组（IETF）提出建议，要求新制定的国际互联网标准只支持IPv6，不再兼容IPv4。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv6?fromModule=lemma_inlink" title="IPv6_百度百科">IPv6_百度百科</a></p>
+<h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a><strong>FTP</strong></h2><p>文件传输协议（File Transfer Protocol，FTP）是用于在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C?fromModule=lemma_inlink" title="网络">网络</a>上进行文件传输的一套标准协议，它工作在 OSI 模型的第七层， TCP 模型的第四层， 即应用层， 使用 TCP 传输而不是UDP， 客户在和服务器建立连接前要经过一个“三次握手”的过程， 保证客户与服务器之间的连接是可靠的， 而且是面向连接， 为数据传输提供可靠保证。</p>
+<p>FTP允许用户以文件操作的方式（如文件的增、删、改、查、传送等）与另一主机相互通信。然而， 用户并不真正登录到自己想要存取的计算机上面而成为完全用户， 可用FTP程序访问远程资源， 实现用户往返传输文件、目录管理以及访问电子邮件等等， 即使双方计算机可能配有不同的操作系统和文件存储方式。</p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a><strong>HTTP</strong></h2><p>超文本传输协议（Hyper Text Transfer Protocol，HTTP）是一个简单的请求-响应协议，它通常运行在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/TCP/33012?fromModule=lemma_inlink" title="TCP">TCP</a>之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。请求和响应消息的头以<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ASCII/309296?fromModule=lemma_inlink" title="ASCII">ASCII</a>形式给出；而消息内容则具有一个类似<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/MIME/2900607?fromModule=lemma_inlink" title="MIME">MIME</a>的格式。这个简单模型是早期<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Web/150564?fromModule=lemma_inlink" title="Web">Web</a>成功的有功之臣，因为它使开发和部署非常地直截了当。</p>
+<p>HTTP是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE/3668945?fromModule=lemma_inlink" title="应用层协议">应用层协议</a>，同其他应用层协议一样，是为了实现某一类具体应用的协议，并由某一运行在用户空间的应用程序来实现其功能。HTTP是一种协议规范，这种规范记录在文档上，为真正通过HTTP进行通信的HTTP的实现程序。</p>
+<p>推荐：<a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1619820328010868248&wfr=spider&for=pc" title="HTTP与FTP区别">HTTP与FTP区别</a></p>
+<h2 id="网络传输协议"><a href="#网络传输协议" class="headerlink" title="网络传输协议"></a><strong>网络传输协议</strong></h2><p>或简称为<strong>传送协议</strong>（<strong>Communications Protocol</strong>），是指计算机通信或网络设备的共同语言。现在最普及的计算机通信为网络通信，所以“传送协议”一般都指计算机通信的传送协议，如：HTTP，TCP&#x2F;IP、NetBEUI、DHCP、FTP等。然而，传送协议也存在于计算机的其他形式通信，例如：面向对象编程里面对象之间的通信；操作系统内不同程序之间的消息，都需要有一个传送协议，以确保传信双方能够沟通无间。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/8048821?fr=aladdin" title="传输协议_百度百科">传输协议_百度百科</a></p>
+<p>上面就是基本知识，下面搭建比较系统的框架：</p>
+<h2 id="较为系统框架"><a href="#较为系统框架" class="headerlink" title="较为系统框架"></a>较为系统框架</h2><p>计算机网络：是一个将分散的，具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现资源共享和信息传递的系统。</p>
+<p>分布范围：广域网，城域网，局域网，个人区域网。</p>
+<p>使用者：公用网，专用网。</p>
+<p>交换技术：电路交换，报文交换，分组交换。</p>
+<p>传输技术：广播式，点对点。</p>
+<p>组成部分：硬件，软件，协议。</p>
+<p>功能：数据通信，资源共享。（分布式处理，提高可靠性，负载均衡）</p>
+<p>要是用不同厂商的硬，软件之间的相互连通，必须遵从统一的标准。</p>
+<p>标准的分类：</p>
+<p>1，法定标准 ：由权威机构制定的正式的，合法的标准。OSI</p>
+<p>2，事实标准 ：某些公司的产品在竞争中占据了主流，时间长了，这些产品中的协议和技术就成了标准。  TCP&#x2F;IP</p>
+<p>一些概念：</p>
+<p>网络体系结构是从功能上描述计算机网络结构。<br>计算机网络体系结构简称网络体系结构是分层结构。<br>每层遵循某个&#x2F;些网络协议以完成本层功能。<br>计算机网络体系结构是计算机网络的各层及其协议的集合。<br>第n层在向n+1层提供服务时，此服务不仅包含第n层本身的功能，还包含由下层服务提供的功能。<br>仅仅在相邻层间有接口，且所提供服务的具体实现细节对上一层完全屏蔽。<br>体系结构是抽象的，而实现是指能运行的一些软件和硬件。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/personal-blog-wzz/about" rel="external nofollow noreferrer">牙牙</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/12/01/%E6%B5%85%E6%B5%85%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/12/01/%E6%B5%85%E6%B5%85%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/personal-blog-wzz/tags/%E7%BD%91%E7%BB%9C-tcp-ip-udp/">
+                                    <span class="chip bg-color">网络 tcp/ip udp</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/personal-blog-wzz/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/personal-blog-wzz/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/personal-blog-wzz/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/personal-blog-wzz/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/personal-blog-wzz/libs/valine/av-min.js"></script>
+<script src="/personal-blog-wzz/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'gn5OhWih9iuVIbJm86pK8ctI-9Nh9j0Va',
+        appKey: '7gw3kUOgKtar8z6ddSMduP63',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '来填写友善的评论'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/personal-blog-wzz/2022/12/09/Mybatis-plus%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA+%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E5%99%A8+ws/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/personal-blog-wzz/medias/featureimages/13.jpg" class="responsive-img" alt="Mybatis-plus实战项目演示+自定义元数据对象处理器+ws">
+                        
+                        <span class="card-title">Mybatis-plus实战项目演示+自定义元数据对象处理器+ws</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-09
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/personal-blog-wzz/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    java开发框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/personal-blog-wzz/tags/mybatis-java-%E6%95%B0%E6%8D%AE%E5%BA%93-WebSocket-%E5%85%83%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">mybatis java 数据库 WebSocket 元数据</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/personal-blog-wzz/2022/11/23/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9Fminio/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/personal-blog-wzz/medias/featureimages/2.jpg" class="responsive-img" alt="分布式文件存储系统minio">
+                        
+                        <span class="card-title">分布式文件存储系统minio</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/personal-blog-wzz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-minio-java/">
+                        <span class="chip bg-color">数据库 minio java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/personal-blog-wzz/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/personal-blog-wzz/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/personal-blog-wzz/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7767085361"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.9'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/personal-blog-wzz/libs/aplayer/APlayer.min.js"></script>
+<script src="/personal-blog-wzz/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:2295908251@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2295908251" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2295908251" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/personal-blog-wzz/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/personal-blog-wzz/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/personal-blog-wzz/libs/materialize/materialize.min.js"></script>
+    <script src="/personal-blog-wzz/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/personal-blog-wzz/libs/aos/aos.js"></script>
+    <script src="/personal-blog-wzz/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/personal-blog-wzz/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/personal-blog-wzz/js/matery.js"></script>
+    <script src="/personal-blog-wzz/libs/others/sakura.js"></script>
+    <script type="text/javascript"> var OriginTitile = document.title, st; 
+        document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+        
+
+    
+
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/personal-blog-wzz/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/personal-blog-wzz/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/personal-blog-wzz/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/personal-blog-wzz/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+</html>

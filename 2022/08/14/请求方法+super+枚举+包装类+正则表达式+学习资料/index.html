@@ -1,0 +1,1969 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="请求方法+super+枚举+包装类+正则表达式+学习资料, 牙牙的个人博客">
+    <meta name="description" content="
+
+清理手机空间的时候发现了以前做的笔记，还有一些总结的其他大佬的
+请求方法:get:获取查询数据(查询)post:数据的提交，新增操作(增加)put:向服务端发送数据、改变信息，侧重点在于对数据的修改操作delete:数据库数据的删除he">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>请求方法+super+枚举+包装类+正则表达式+学习资料 | 牙牙的个人博客</title>
+    <link rel="icon" type="image/png" href="/personal-blog-wzz/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/my.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/personal-blog-wzz/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/personal-blog-wzz/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/reward.css">
+    
+
+
+
+    <script src="/personal-blog-wzz/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+ 
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+</script>
+
+ 
+<body>
+    
+        <div id="loading-container">
+             <p class="loading-text">嘘~  正在从服务器偷取页面 . . . </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+                    
+                    <img src="/personal-blog-wzz/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">牙牙的个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/personal-blog-wzz/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">牙牙的个人博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/personal-blog-wzz/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">请求方法+super+枚举+包装类+正则表达式+学习资料</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/personal-blog-wzz/tags/java-%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80-spring-tomcat-maven/">
+                                <span class="chip bg-color">java 开发语言 spring tomcat maven</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/personal-blog-wzz/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                java基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-14
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/personal-blog-wzz/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <span id="more"></span>
+
+<p>清理手机空间的时候发现了以前做的笔记，还有一些总结的其他大佬的</p>
+<h3 id="请求方法"><a href="#请求方法" class="headerlink" title="请求方法:"></a>请求方法:</h3><p>get:获取查询数据(查询)<br>post:数据的提交，新增操作(增加)<br>put:向服务端发送数据、改变信息，侧重点在于对数据的修改操作<br>delete:数据库数据的删除<br>head:一般用来判断类型、根据返回状态确定资源是否存在、资源是否更新以及更新的时间等</p>
+<h3 id="super"><a href="#super" class="headerlink" title="super"></a>super</h3><p>Java 程序在执行子类的构造方法之前，如果没有用 super() 来调用父类特定的构造方法，则会调用父类中“没有参数的构造方法”。</p>
+<p>因此，如果父类中只定义了有参数的构造方法，而在子类的构造方法中又没有用 super() 来调用父类中特定的构造方法，则编译时将发生错误。</p>
+<p>因为 Java 程序在父类中找不到没有参数的构造方法可供执行。解决办法是在父类里加上一个不做事且没有参数的构造方法<br> “Java 程序在执行子类的构造方法之前，如果没有用 super() 来调用父类特定的构造方法，则会调用父类中“没有参数的构造方法”</p>
+<p>先说说对构造函数的理解：</p>
+<p>1，函数名与类名相同。</p>
+<p>2，没有返回值。</p>
+<p>3，没有return。</p>
+<p>4，每个类都有一个默认无参的构造函数，初始化该类的时候，先走构造函数，用于初始化成员变量和方法。</p>
+<p>5，一个类如果自定义了构造函数，则默认的无参构造函数没有了，如果需要无参的构造函数，必须手动添加。</p>
+<p>再说说子类和父类关于super()方法的调用：</p>
+<p>1，super(); 就是调用父类的构造函数。</p>
+<p>2，如果父类自定义了有参的构造函数，子类必须自定义构造函数，并且在构造函数的第一行调用父类的带参的构造函数super();。（这块我个人理解为，如果子类没有自定义构造函数，那默认的是无参的构造函数，无参的构造函数默认调用父类的无参的构造函数，但是父类自定义了有参的构造函数，就没有无参的构造函数了，所以这个编译是失败的。）</p>
+<p>3，如果父类只自定义了无参的构造函数，那么子类如果自定义了构造函数，不论有参没参，都默认调用父类无参的构造函数，这个时候，子类构造函数不用加super();<br>类的继承知识点</p>
+<p>(1)java不支持多重继承，也就是说子类至多只能有一个父类</p>
+<p>(2)子类继承了其父类中不是私有的成员变量和成员方法，作为自己的成员变量和方法</p>
+<p>(3)子类中定义的成员变量和父类中定义的成员变量相同时，则父类中的成员变量不能被继承</p>
+<p>(4)子类中定义的成员方法，并且这个成员方法的名字，返回类型，及参数个数和类型与父类的某个成员方法完全相同，则父类的成员方法不能被继承。<br> #getSuperClass()<br>getSuperClass()方法在java.lang包中可用。<br>getSuperClass()方法用于返回Class，该Class表示此Class表示的任何类，接口，原始类型或任何void类型的超类。<br>getSuperClass()方法是一个非静态方法，只能通过类对象访问，如果尝试使用类名称访问该方法，则会收到错误消息<br>getSuperClass()方法在返回超类时不会引发异常。</p>
+<p>super只在子类中出现<br>super有三种用法<br>【1】 super.xxx;<br>xxx可以是类的属性。<br>例如super.name;即从子类中获取父类name属性的值</p>
+<p>【2】 super.xxx();<br>xxx()可以是类中的方法名。<br>super.xxx();的意义是直接访问父类中的xxx()方法并调用</p>
+<p>【3】 super();<br>此方法意义是直接调用父类的构造函数。<br>super(无参&#x2F;有参）即调用父类中的某个构造方法，括号里的内容根据你所调用的某个构造函数的变化而改变</p>
+<p>枚举</p>
+<p>(1) 枚举型是一个集合，集合中的元素(枚举成员)是一些命名的整型常量，元素之间用逗号,隔开。</p>
+<p>(2) DAY是一个标识符，可以看成这个集合的名字，是一个可选项，即是可有可无的项。</p>
+<p>(3) 第一个枚举成员的默认值为整型的0，后续枚举成员的值在前一个成员上加1。</p>
+<p>(4) 可以人为设定枚举成员的值，从而自定义某个范围内的整数。</p>
+<p>(5) 枚举型是预处理指令#define的替代。</p>
+<p>(6) 类型定义以分号;结束。</p>
+<p>注意：同一个程序中不能定义同名的枚举类型，不同的枚举类型中也不能存在同名的命名常量。</p>
+<h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><p>一、包装类说明<br>为了方便操作基本数据类型值，将其封装成了对象，在对象中定义了属性和行为丰富了该数据的操作。用于描述该对象的类就称为基本数据类型对象包装类。</p>
+<p>基本数据类型与相应的包装类</p>
+<pre class="language-none"><code class="language-none">byte     Byte
+
+short    Short
+
+int      Integer
+
+long     Long
+
+float    Float
+
+double   Double
+
+char     Character
+
+boolean  Boolean</code></pre>
+
+<p>二、包装类主要功能<br>该包装对象主要用基本类型和字符串之间的转换。</p>
+<p>（1）基本类型—&gt;字符串<br>1、基本类型数值+””</p>
+<p>2、用String类中的静态方法valueOf(基本类型数值);</p>
+<p>3、用包装类的静态方法valueOf(基本类型数值);</p>
+<p>（2）字符串—&gt;基本类型<br>1、使用包装类中的静态方法:xxx parseXxx(“xxx类型的字符串”);</p>
+<p>eg:</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"intstring"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">long</span> <span class="token function">parseLong</span><span class="token punctuation">(</span><span class="token string">"longstring"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">boolean</span> <span class="token function">parseBoolean</span><span class="token punctuation">(</span><span class="token string">"booleanstring"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>备注：只有Character没有parse方法，本身就是封装了字符，无须转换</p>
+<p>2、如果字符串被xxx包装类进行对象的封装。</p>
+<p>可使用另一个非静态的方法，xxxValue();</p>
+<p>将一个xxx包装类对象转成基本数据类型值。</p>
+<p>三、JDK1.5自动装箱拆箱<br>（1）拆箱装箱概念<br>装箱：自动将基本数据类型转换为包装器类型；</p>
+<p>拆箱：自动将包装器类型转换为基本数据类型。</p>
+<p>（2）jdk1.5后包装类新特性</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token class-name">Integeri</span><span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">;</span><span class="token comment">//自动装箱，简化书写：Integer i=new Integer(4);</span>
+i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">6</span><span class="token punctuation">;</span><span class="token comment">//i=new Integer(i.intValue+6);//自动拆箱</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//10</span></code></pre>
+
+<p>（3）拆箱装箱实现<br>装箱：自动将基本数据类型转换为包装器类型；装箱过程是通过调用包装器的valueOf方法实现的</p>
+<p>拆箱：自动将包装器类型转换为基本数据类型。拆箱过程是通过调用包装器的 xxxValue方法实现的。（xxx代表对应的基本数据类型）。</p>
+<p>【1】实现代码案例</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Autoboxing_Unboxing</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Integer</span> i <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment">//装箱</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> i<span class="token punctuation">;</span><span class="token comment">//拆箱</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>【2】反编译代码发现<br>反编译class文件之后得到如下内容：<br>　从反编译得到的字节码内容可以看出，在装箱的时候自动调用的是Integer的valueOf(int)方法。而在拆箱的时候自动调用的是Integer的intValue方法。</p>
+<p>其他的也类似，比如Double、Character</p>
+<p>【3】结论<br>　　因此可以用一句话总结装箱和拆箱的实现过程：</p>
+<p>装箱过程是通过调用包装器的valueOf方法实现的，拆箱过程是通过调用包装器的 xxxValue方法实现的。（xxx代表对应的基本数据类型）。</p>
+<p>四、包装类装箱之valueOf方法之思<br>1、创建对象与valueOf方法【装箱】<br>思考：由于装箱过程是调用包装器的valueOf方法实现的，</p>
+<p>即：当Integer i&#x3D;3过程，创建Integer对象的时候，这样一个装箱过程，就会调用包装器的valueOf方法。所以，我们在此重点讨论这个valueOf方法。</p>
+<p>2、valueOf方法结论<br>主要得出几个结论：</p>
+<p>2.1不同包装类之间，有共性的地方。分为三大派别：<br>【1】Integer、Short、Byte、Character、Long这几个类的valueOf方法的实现是类似的。比较特殊，根据数值的大小范围而获得对象的方式不同</p>
+<p>【2】Double、Float的valueOf方法的实现是类似的，每次都返回不同的对象。</p>
+<p>【3】Boolean的valueOf方法实现，每次返回的都是同一个对象</p>
+<p>2.2对于类别【1】<br>（1）有两种创建对象的情况：<br>《1》在一些特定取值范围内，创建的对象是共享的，即：该数值范围的对象，在内存中只创建一个（一次），以后想创建该数值的对象，直接获取即可，不需要去new新的。</p>
+<p>这个范围的取值情况是：</p>
+<p>相同对象范围：在该范围内，同数值情况下，对象是相同的，是同一个。</p>
+<p>Integer    相同对象范围  [-128,127]</p>
+<p>Short      相同对象范围  [-128,127] </p>
+<p>Byte      相同对象范围  [-128,127]  </p>
+<p>Character  相同对象范围  [0,127]    </p>
+<p>Long      相同对象范围 [-128,127]  </p>
+<p>《2》除了上述的取值范围内，对象只创建一个，这里所说的范围内，对象不会共享，相同数值情况下，会创建不同的对象</p>
+<p>这个范围的取值情况是：</p>
+<p>不同对象范围：在该范围内，同数值情况下，对象是不同的，是多个不同的。</p>
+<p>Integer    不同对象范围 i&lt;128||i&gt;&#x3D;128</p>
+<p>Short     不同对象范围 s&lt;128||s&gt;&#x3D;128</p>
+<p>Byte      不同对象范围  无</p>
+<p>Character  不同对象范围  c&gt;&#x3D;128</p>
+<p>Long      不同对象范围 L&lt;128||L&gt;&#x3D;128</p>
+<p>综合《1》《2》得</p>
+<p>Integer    相同对象范围 [-128,127] 不同对象范围i&lt;128||i&gt;&#x3D;128</p>
+<p>Short     相同对象范围 [-128,127] 不同对象范围s&lt;128||s&gt;&#x3D;128</p>
+<p>Byte      相同对象范围 [-128,127] 不同对象范围无</p>
+<p>Character  相同对象范围 [0,127]   不同对象范围c&gt;&#x3D;128</p>
+<p>Long     相同对象范围 [-128,127] 不同对象范围 L&lt;128||L&gt;&#x3D;128</p>
+<p>（2）Integer的valueOf源码</p>
+<p>【1】valueOf工厂方法</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Integer</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>   
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">>=</span> <span class="token operator">-</span><span class="token number">128</span> <span class="token operator">&amp;&amp;</span>i<span class="token operator">&lt;=</span><span class="token class-name">IntegerCache</span><span class="token punctuation">.</span>high<span class="token punctuation">)</span>   
+          <span class="token comment">//如果i在-128~high之间,就直接在缓存中取出i的Integer类型对象 </span>
+          <span class="token keyword">return</span> <span class="token class-name">IntegerCache</span><span class="token punctuation">.</span>cache<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   
+        <span class="token keyword">else</span> 
+          <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//否则就在堆内存中创建  </span>
+    <span class="token punctuation">&#125;</span>   </code></pre>
+
+<p>【2】IntegerCache内部类  
+ </p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">IntegerCache</span> <span class="token punctuation">&#123;</span><span class="token comment">//内部类，注意它的属性都是定义为static final </span>
+        <span class="token keyword">static</span> <span class="token keyword">final</span> inthigh<span class="token punctuation">;</span> <span class="token comment">//缓存上界 </span>
+        <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Integer</span> cache<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//cache缓存是一个存放Integer类型的数组 </span>
+
+        <span class="token keyword">static</span> <span class="token punctuation">&#123;</span><span class="token comment">//静态语句块 </span>
+           <span class="token keyword">final</span> <span class="token keyword">int</span> low <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">128</span><span class="token punctuation">;</span><span class="token comment">//缓存下界，值不可变 </span>
+
+           <span class="token comment">// high valuemay beconfigured by property </span>
+           <span class="token keyword">int</span> h <span class="token operator">=</span> <span class="token number">127</span><span class="token punctuation">;</span><span class="token comment">// h值，可以通过设置jdk的AutoBoxCacheMax参数调整(参见(3)) </span>
+           <span class="token keyword">if</span> <span class="token punctuation">(</span>integerCacheHighPropValue<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+               <span class="token comment">// UseLong.decode here to avoid invoking methods that </span>
+               <span class="token comment">// requireInteger's autoboxing cache to be initialized </span>
+               <span class="token comment">// 通过解码integerCacheHighPropValue，而得到一个候选的上界值 </span>
+               <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>integerCacheHighPropValue<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+               <span class="token comment">// 取较大的作为上界，但又不能大于Integer的边界MAX_VALUE </span>
+               i <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token number">127</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//上界最小为127 </span>
+               <span class="token comment">// Maximumarray size is Integer.MAX_VALUE </span>
+               h <span class="token operator">=</span> <span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span> <span class="token operator">-</span> <span class="token operator">-</span>low<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+           <span class="token punctuation">&#125;</span> 
+           high <span class="token operator">=</span> h<span class="token punctuation">;</span> <span class="token comment">//上界确定，此时high默认一般是127 </span>
+           <span class="token comment">// 创建缓存块，注意缓存数组大小 </span>
+           cache <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">(</span>high <span class="token operator">-</span> low<span class="token punctuation">)</span> <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
+           <span class="token keyword">int</span> j <span class="token operator">=</span> low<span class="token punctuation">;</span> 
+           <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span>cache<span class="token punctuation">.</span>length<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> 
+               cache<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Integer</span><span class="token punctuation">(</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// -128到high值逐一分配到缓存数组 </span>
+       <span class="token punctuation">&#125;</span> 
+
+        <span class="token keyword">private</span> <span class="token class-name">IntegerCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token comment">//构造方法,不需要构造什么 </span>
+    <span class="token punctuation">&#125;</span> </code></pre>
+
+<p>分析：取值范围[-128,127]共享对象，之外创建独立对象</p>
+<p>（3）Short的valueOf源码  
+ </p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Short</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">short</span> s<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">final</span> <span class="token keyword">int</span> offset <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> sAsInt <span class="token operator">=</span> s<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>sAsInt <span class="token operator">>=</span> <span class="token operator">-</span><span class="token number">128</span> <span class="token operator">&amp;&amp;</span>sAsInt <span class="token operator">&lt;=</span> <span class="token number">127</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// must cache</span>
+            <span class="token keyword">return</span> <span class="token class-name">ShortCache</span><span class="token punctuation">.</span>cache<span class="token punctuation">[</span>sAsInt <span class="token operator">+</span>offset<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Short</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>分析：取值范围[-128,127]共享对象，之外创建独立对象</p>
+<p>（4）Long的valueOf源码</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Long</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">long</span> l<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">final</span> <span class="token keyword">int</span> offset <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">>=</span> <span class="token operator">-</span><span class="token number">128</span> <span class="token operator">&amp;&amp;</span>l <span class="token operator">&lt;=</span> <span class="token number">127</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token comment">// will cache</span>
+            <span class="token keyword">return</span> <span class="token class-name">LongCache</span><span class="token punctuation">.</span>cache<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>l <span class="token operator">+</span> offset<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Long</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>分析：取值范围[-128,127]共享对象，之外创建独立对象</p>
+<p>（5）Byte的ValueOf源码</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Byte</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">byte</span> b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">final</span> <span class="token keyword">int</span> offset <span class="token operator">=</span> <span class="token number">128</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">ByteCache</span><span class="token punctuation">.</span>cache<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>b <span class="token operator">+</span>offset<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ByteCache</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">private</span> <span class="token class-name">ByteCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+        <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Byte</span> cache<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Byte</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">127</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">static</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> cache<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+                cache<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Byte</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>分析：取值范围[-128,127]共享对象</p>
+<p>备注：基本数据类型byte的取值范围[-128,127]</p>
+<p>（6）Character的valueOf源码</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Character</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">&lt;=</span> <span class="token number">127</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//must cache</span>
+            <span class="token keyword">return</span> <span class="token class-name">CharacterCache</span><span class="token punctuation">.</span>cache<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>c<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Character</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>分析：取值范围[0,127]共享对象，之外创建独立对象</p>
+<p>（7）一些测试案例<br>《1》案例一</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CharacterTest</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token comment">//测试结论： 0-127范围，对象共享；128开始，创建不同的新对象</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+       <span class="token class-name">Character</span> c1<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> <span class="token number">128</span><span class="token punctuation">;</span>
+       <span class="token class-name">Character</span> c2<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token number">128</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c1<span class="token operator">==</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+       <span class="token class-name">Character</span> c11<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> <span class="token number">127</span><span class="token punctuation">;</span>
+       <span class="token class-name">Character</span> c12<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token number">127</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c11<span class="token operator">==</span>c12<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c11<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>c12<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+       <span class="token class-name">Character</span> c21<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> <span class="token number">0</span><span class="token punctuation">;</span>
+       <span class="token class-name">Character</span> c22<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c21<span class="token operator">==</span>c22<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c21<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>c22<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>《2》案例二</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ByteTest</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token comment">//测试结论：byte取值的范围：-128-127</span>
+    <span class="token comment">//而在byte的范围内的对象都是可以共享的</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+       <span class="token comment">//byte最大</span>
+       <span class="token class-name">Byte</span> b1<span class="token operator">=</span><span class="token number">127</span><span class="token punctuation">;</span>
+       <span class="token class-name">Byte</span> b2<span class="token operator">=</span><span class="token number">127</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b1<span class="token operator">==</span>b2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b1<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>b2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+       <span class="token comment">//byte最小</span>
+       <span class="token class-name">Byte</span> b11<span class="token operator">=</span><span class="token operator">-</span><span class="token number">128</span><span class="token punctuation">;</span>
+       <span class="token class-name">Byte</span> b12<span class="token operator">=</span><span class="token operator">-</span><span class="token number">128</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b11<span class="token operator">==</span>b12<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b11<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>b12<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token comment">//对于超出byte取值范围[-128,127]的，最终都会转为byte范围内的数字，所以一样得到了true的结果</span>
+
+<span class="token comment">//     Byte b12=128;//报错</span>
+       <span class="token class-name">Byte</span> b13<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> <span class="token number">128</span><span class="token punctuation">;</span>
+       <span class="token comment">//int（32位）的128强制类型转为byte（8位）型，其中会把多余的24位剔除，从而转换成byte范围的数</span>
+       <span class="token class-name">Byte</span> b23<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> <span class="token number">128</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b13<span class="token operator">==</span>b23<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b13<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>b23<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+       <span class="token class-name">Byte</span> b21<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token number">129</span><span class="token punctuation">;</span>
+       <span class="token class-name">Byte</span> b22<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token number">129</span><span class="token punctuation">;</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b21<span class="token operator">==</span>b22<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b21<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>b22<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>2.3对于类别【2】Double、Float的valueOf方法的实现是类似的，每次都返回不同的对象】<br>（1）Double 的ValueOf源码</p>
+<p> </p>
+<pre class="language-java" data-language="java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Double</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token keyword">double</span> d<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        returnnew <span class="token class-name">Double</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>分析：每次都创建不同的对象</p>
+<p>（2）Float 的ValueOf源码</p>
+<p> </p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Float</span> <span class="token function">valueOf</span><span class="token punctuation">(</span>floatf<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Float</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>分析：每次都创建不同的对象</p>
+<p>2.4对于类别【3】Boolean的valueOf方法实现，每次返回的都是同一个对象<br>Boolean 的ValueOf源码</p>
+<pre class="language-java" data-language="java"><code class="language-java">  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Boolean</span> <span class="token constant">TRUE</span> <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Boolean</span> <span class="token constant">FALSE</span> <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Boolean</span> <span class="token function">valueOf</span><span class="token punctuation">(</span>booleanb<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>b <span class="token operator">?</span><span class="token constant">TRUE</span> <span class="token operator">:</span> <span class="token constant">FALSE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>分析：每次的对象都是同一个，因为那个对象是创建好的常量。</p>
+<p>五、包装类的equals方法<br>1、方法结论<br>1.1结论<br>equals方法为true时，需要满足两个条件：</p>
+<p>1、类型相同  2、内容相同</p>
+<p>1.2源码分析<br>（1）Integer的equals源码  
+  </p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Integer</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> value <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Integer</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>（2）Short的equals源码</p>
+<p> </p>
+<pre class="language-java" data-language="java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Short</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> value <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Short</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">shortValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>（3）Long的equals源码</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Long</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> value <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Long</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">longValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>（4）Character的equals源码  
+  </p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Character</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> value <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Character</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">charValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>（5）Byte的equals源码</p>
+<p> </p>
+<pre class="language-java" data-language="java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Byte</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> value <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Byte</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">byteValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>（6）Float的equals源码</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Objectobj</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Float</span><span class="token punctuation">)</span>
+               <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token function">floatToIntBits</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Float</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token operator">==</span><span class="token function">floatToIntBits</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>（7）Double的equals源码</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Objectobj</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Double</span><span class="token punctuation">)</span>
+               <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token function">doubleToLongBits</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Double</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token operator">==</span>
+                      <span class="token function">doubleToLongBits</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>（8）Boolean的equals源码</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Objectobj</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Boolean</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            returnvalue <span class="token operator">==</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Boolean</span><span class="token punctuation">)</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">booleanValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+
+<p>六、包装类一些结论总结<br>1、当一个基础数据类型与封装类进行&#x3D;&#x3D;运算时，会将封装类进行拆箱</p>
+<p>2、+运算时，会将封装类进行拆箱</p>
+<p>3、当封装类与基础类型进行&#x3D;&#x3D;运行时，封装类会进行拆箱，拆箱结果与基础类型对比值；</p>
+<p>而两个封装类进行&#x3D;&#x3D;运行时，与其它的对象进行&#x3D;&#x3D;运行一样，对比两个对象的地址，也即判断是否两个引用是否指向同一个对象。</p>
+<p>4、陷阱一：有拆箱操作时一定要特别注意封装类对象是否为null，如果为空，则不能调用对象的任何方法，否则会报错</p>
+<p>5、陷阱二：不同范围数值的对象产生情况不同（详情看：四、包装类装箱之valueOf方法之思）</p>
+<p>该结论来自以下参考文章，如果想了解详细，请看该文</p>
+<p>博文：详解Java的自动装箱与拆箱(Autoboxingand unboxing)</p>
+<p>博主：Mirhunana</p>
+<p>网址：<a target="_blank" rel="noopener" href="http://blog.csdn.net/hp910315/article/details/48654777" title="链接">链接</a></p>
+<p>七、包装类综合实例应用</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+       <span class="token comment">/*
+        * 当 "=="运算符的两个操作数都是包装器类型的引用，则是比较指向的是否是同一个对象，
+        * 而如果其中有一个操作数是表达式（即包含算术运算）则比较的是数值（即会触发自动拆箱的过程）。
+        * 另外，对于包装器类型，equals方法并不会进行类型转换
+        */</span>
+        <span class="token class-name">Integer</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token class-name">Integer</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token class-name">Integer</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token class-name">Integer</span> d <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+        <span class="token class-name">Integer</span> e <span class="token operator">=</span> <span class="token number">321</span><span class="token punctuation">;</span><span class="token comment">//大于一个字节表示范围（byte:-128-127）</span>
+        <span class="token class-name">Integer</span> f <span class="token operator">=</span> <span class="token number">321</span><span class="token punctuation">;</span>
+        <span class="token class-name">Long</span> g <span class="token operator">=</span> <span class="token number">3L</span><span class="token punctuation">;</span>
+        <span class="token class-name">Long</span> h <span class="token operator">=</span> <span class="token number">2L</span><span class="token punctuation">;</span>
+
+
+        <span class="token comment">//如果装箱的是一个字节，该数据会被共享不会重新开辟空间</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token operator">==</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token operator">==</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false </span>
+
+        <span class="token comment">/*
+         * a+b包含了算术运算，因此会触发自动拆箱过程（会调用intValue方法），
+         * 因此它们比较的是数值是否相等。
+         * 
+         * 而对于c.equals(a+b)会先触发自动拆箱过程，再触发自动装箱过程，
+         * 也就是说a+b，会先各自调用intValue方法，得到了加法运算后的数值之后，
+         * 便调用Integer.valueOf方法，再进行equals比较。同理对于后面的也是这样，
+         * 不过要注意倒数第二个和最后一个输出的结果（如果数值是int类型的，
+         * 装箱过程调用的是Integer.valueOf；如果是long类型的，装箱调用的Long.valueOf方法）
+         */</span>
+
+        <span class="token comment">/*
+         * 3=（1+2）
+         * a+b包含了算术运算，因此会触发自动拆箱过程（会调用intValue方法），
+         * 因此它们比较的是数值是否相等。
+         */</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token operator">==</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+        <span class="token comment">/*
+         * 3.equals(1+2)
+         * 先自动拆箱，左边数值为3，右边数值为3；
+         * 然后出发自动装箱，装箱过程中调用Integer.valueOf方法，
+         * 即：如果装箱的是一个字节，该数据会被共享不会重新开辟空间
+         * 过左边和右边是同一个空间的地址，所以相等
+         */</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+
+<span class="token comment">//       System.out.println("3L==(1+2)--"+(3L==(1+2)));</span>
+
+        <span class="token comment">/*
+         * 3L==(1+2)
+         * a+b包含了算术运算，因此会触发自动拆箱过程（会调用intValue方法），
+         * 因此它们比较的是数值是否相等。
+         * 左边为3L 右边为3 ，两者的值相等吗？
+         * 相等：int与 long进行运算、比较时 int 会自动进行类型提升为 long类型
+         *      类型自动提升
+         */</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>g<span class="token operator">==</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+        <span class="token comment">/*
+         * 3L.equals(1+2)
+         * 先自动拆箱，左边数值为3L，右边数值为3；
+         * 然后出发自动装箱，装箱过程中左边调用Double.valueOf方法，右边调用Integer.valueOf方法
+         * 左边为Long型，右边为Integer型(原因：类型不同，内容相同)
+         */</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span>
+
+        <span class="token comment">/*
+         * 3L.equals(1+2L)
+         * 先自动拆箱，左边数值为3L，右边数值为3L(运算的时候，由于自动类型转换，所以为3L)；
+         * 然后出发自动装箱，装箱过程中两边都调用Double.valueOf方法
+         * 两边数值相等，故相等(类型和内容相同)
+         */</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>g<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>a<span class="token operator">+</span>h<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>正则表达式</p>
+<p>在很多技术领域（如：自然语言处理，数据存储等），正则表达式可以很方便的提取我们想要的信息，所以正则表达式是一个很重要的知识点！</p>
+<p>一、概念</p>
+<p>正则表达式（Regular Expression）是用于描述一组字符串特征的模式，用来匹配特定的字符串。通过特殊字符+普通字符来进行模式描述，从而达到文本匹配目的工具。</p>
+<p>正则表达式目前被集成到了各种文本编辑器&#x2F;文本处理工具当中</p>
+<p>二、应用场景</p>
+<p>（1）验证：表单提交时，进行用户名密码的验证。</p>
+<p>（2）查找：从大量信息中快速提取指定内容，在一批url中，查找指定url。</p>
+<p>（3）替换：将指定格式的文本进行正则匹配查找，找到之后进行特定替换。</p>
+<p>三、基本要素</p>
+<p>（1）字符类</p>
+<p>（2）数量限定符</p>
+<p>（3）位置限定符</p>
+<p>（4）特殊符号</p>
+<p>注意：正则表达式基本是与语言无关的，我们可以结合语言&#x2F;工具与正则表达式进行文本处理，在后面的博客中，我将使用grep来进行验证。（grep是一款Linux下按行匹配文本的工具，如下，使我们常使用的两个选项）</p>
+<p>-E：使用扩展正则匹配</p>
+<p>--color：将匹配得到的内容进行语法高亮</p>
+<p>1.字符类</p>
+<p>注意：1.grep采用的贪心匹配，它会匹配当前行中的所有匹配内容</p>
+<p>2.echo $?表示是否匹配成功（如果成功返回值为0，不成功返回值为1）</p>
+<p>2.数量限定符</p>
+<p>由此，我们可以看出，“前面的单元”默认是指？或+前面的字符</p>
+<p>注意：该结果为匹配失败，在相关文档中并未出现，应该啊是错误或者废弃的用法</p>
+<p>3.位置限定符</p>
+<p>4.特殊符号</p>
+<p>假如我们去掉-E选项，会有什么现象呢？</p>
+<p>此时，不难发现，去掉-E选项之后没有进行正常的正则匹配，这种现象需要我们引入如下的两个概念！</p>
+<p>5.基本正则表达式&amp;扩展正则表达式</p>
+<p>区别：正则表达式的扩展正则（Extended规范）和基本正则（Basic规范）下，有些字符￼应该解释为普通字符，要表示上述特殊含义则需要加“\”转义字符。反之，在扩展规范下，￼应被理解为特殊含义，要取其字面值，也要对其进行“\”转义。</p>
+<p>因此，grep工具带上-E选项，表示使用扩展正则来进行匹配，若没有该选项，则表示使用基准正则来进行匹配</p>
+<p>5.其他普通字符集及其替换</p>
+<p>综上，正则表达式有以下三个分类：</p>
+<p>（1）基本正则表达式：Basic即BPEs</p>
+<p>（2）扩展正则表达式：Extended即EREs</p>
+<p>（3）Perl的正则表达式：PREs</p>
+<p>因此，当grep指令不跟任何参数时，表示要使用BREs，后面跟“-E”表示使用EREs，后面跟“-P”参数，表示使用PREs</p>
+<p>四、贪婪模式与非贪婪模式</p>
+<p>1.贪婪模式：正则表达式匹配时，会尽量多的匹配符合条件的内容</p>
+<p>注意：grep默认采用贪婪匹配，可能会对我们的测试结果造成干扰，大家可以上网使用“正则在线转换工具”进行测试</p>
+<p>2.非贪婪模式：正则表达式匹配时，会尽量少的匹配符合条件的内容，也就是说，一旦发现匹配符合要求，立马就匹配成功，而不会继续匹配下去（除非有g，开启下一组匹配）</p>
+<p>五、零宽断言</p>
+<p>1.所谓断言，是用来声明一个应该为真的事实。在正则表达式中，只有当断言为真时才会继续进行匹配。</p>
+<p>2.零宽断言：像用于查找某些内容之前或者之后的东西，其中一些特殊字符如“\b、^、$”等用于指定一个位置，这个位置应满足一定的条件。</p>
+<p>3.分类：</p>
+<p>（1）零宽度正预测先行断言（?&#x3D;exp）</p>
+<p>它断言自身出现的位置之后能匹配的表达式exp。如：\b\w+(?&#x3D;ing\b),表示匹配以ing结尾的单词的前面的部分（除ing以外的部分）。当我们要查找“I’m singing while you’re dancing.”时，它会匹配sing和danc</p>
+<p>（2）零宽度正回顾后发断言（?&gt;&#x3D;exp）</p>
+<p>它断言自身出现的位置的前面能匹配的表达式exp。如：（?&lt;&#x3D;\bre）\w+\b会匹配以re开头的单词的后半部分（除er以外的部分），例如：在查找“reading a book”时，它匹配ading</p>
+<p><img src="https://img-blog.csdnimg.cn/b761f19d55564e9194f17dbf900397be.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/fca0509d470e4ae38c3f0b3e828b43db.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/6f79c834b8ea42aca2bf419f4816227d.png"> 上面这些是以前记录在手机上的，也忘记了哪些是自己写的，哪些是网上的大佬的。</p>
+<p>如果有人知道，请帮忙艾特出来，我会在文章上面都放上原文链接。</p>
+<p><strong>下面的是清理空间时找到的一些以前存的励志句子，分享一下：</strong></p>
+<p>＃想让优秀的人奔向你，先考个专业前十试试，成绩不同，交际圈也会发生变化。<br>＃爱人之前先自己变得强大。<br>＃不要别人一问起关于你的什么，就毫无保留的说给别人听，学会拒绝。<br>＃不是做什么都需要人陪着的。<br>＃自先沉稳，而后爱人。<br>＃现在谈拥有，太幼稚。<br>＃不回应就代表拒绝。<br>＃合群是堕落的开始，优秀的开始是孤行。<br>＃与其硬挤进一个圈子，不如独自高贵。<br>＃大多数人都是先看你的五官再去了解你的三观。<br>＃智者不入爱河，你可以永远保持自己对美好爱情的向往，但一定要爱自己。<br>＃当一个人配不上你给的温柔时，那你也就没有必要对她温柔了，即便你们的关系以前有多好。<br>＃你的注意力应该转向生活中那些宏观的方面，花时间来审视自己对未来的总体计划。理想对你来说尤为重要，不要因为自己的情绪而耽误了更重要的事情，理想在你的整个生活中是非常重要的。<br>＃不说自己错事，不说自己目标，不说自己钱财，不说自己家事。<br>＃出言有尺，嬉闹有度，做事有余，说话有德。<br>＃世界上99%的人的成长过程就像一场慢性自杀：每天杀掉一点天真，杀掉一点认真，杀掉一点热情；多一点伪装，多一点顺从，多一点现实。<br>因为他们没有强大的内核，因此只能苟活于世，只能随波逐流，最终活成了模子里出来的模具，生活在绝望的平静里。<br>世界上只有1%的人能够活出自我，因为他们的内核足够强大，这种内核衍生出了核心竞争力，衍生出清晰的定位和目标，衍生出强大的能力去保护自己的天真和真性情，他们才有资格做真实的自己。<br>未来一个人的核心竞争力，就是他的“内核”。<br>＃当你真正明白了自己的使命，它们顿时消失。一个人，越早知道自己要成为谁，就会越快的接近高频率的自己。<br>#往往跟你唠的来的那个人是为了迎合你而有别的目的。</p>
+<p>还有以前百度到的一些资料：</p>
+<p>java范例大全：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1xYtkXyDqWJVM34vkjtIKHw">https://pan.baidu.com/s/1xYtkXyDqWJVM34vkjtIKHw</a>     提取码：l1mv</p>
+<p>c语言书籍：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1H8ajZfc7QdsSjRp5Sif1kg">https://pan.baidu.com/s/1H8ajZfc7QdsSjRp5Sif1kg</a>        提取码：ahhp</p>
+<p>【解码国家安全章节答案智慧树知到】<a target="_blank" rel="noopener" href="https://re.sru.baidu.com/r/CwXor9NjeE?f=cp&u=6928178b8db9d7a1" title="链接">链接</a></p>
+<p>【U校园新视野大学英语视听说教程2第三版完整答案】<a target="_blank" rel="noopener" href="https://mbd.baidu.com/ma/s/LDnZujAS">https://mbd.baidu.com/ma/s/LDnZujAS</a></p>
+<p>网上自动生成springboot：<a target="_blank" rel="noopener" href="https://start.spring.io/">https://start.spring.io/</a></p>
+<p>智慧树解码国际安全</p>
+<p><a target="_blank" rel="noopener" href="https://vip.studypro.club/2019/2019%E7%9F%A5%E5%88%B0%E7%AD%94%E6%A1%88-%E8%A7%A3%E7%A0%81%E5%9B%BD%E5%AE%B6%E5%AE%89%E5%85%A8-%E6%9C%80%E6%96%B0%E6%99%BA%E6%85%A7%E6%A0%91%E6%BB%A1%E5%88%86%E7%AB%A0%E8%8A%82%E6%B5%8B%E8%AF%95/" title="2022知到答案  解码国家安全 最新知到智慧树满分章节测试答案 – 网课小帮手">2022知到答案 解码国家安全 最新知到智慧树满分章节测试答案 – 网课小帮手</a></p>
+<p>英语视听说2:</p>
+<p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/7f2feb7dba68a98271fe910ef12d2af90342a81a?bfetype=new" title="新视野大学英语(第三版)视听说教程2答案 - 百度文库">新视野大学英语(第三版)视听说教程2答案 - 百度文库</a></p>
+<p>淘宝镜像下载Git（Windows版）</p>
+<p><a target="_blank" rel="noopener" href="http://npm.taobao.org/mirrors/git-for-windows/" title="CNPM Binaries Mirror">CNPM Binaries Mirror</a></p>
+<p>Spring官方文档</p>
+<p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#using-boot-starter" title="Spring Boot Reference Guide">Spring Boot Reference Guide</a></p>
+<p>阿里网盘网页版</p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/sign/in" title="阿里云盘">阿里云盘</a></p>
+<p>上面的这些分享给大家了，同时作为我的笔记。</p>
+<p>上一页：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Hubery_sky/article/details/126294535" title="数据结构+java基础（1）+进制之间的转换">数据结构+java基础（1）+进制之间的转换</a></p>
+<p>下一页：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Hubery_sky/article/details/126337784" title="常用dos命令+关键字保留字+命名规范+基本数据类型+引用数据类型+基本数据类型转换+算术运算符需要注意的问题+以前笔记+部分运算符+方法重载+变量赋值+构造器的作用+package关键字">常用dos命令+关键字保留字+命名规范+基本数据类型+引用数据类型+基本数据类型转换+算术运算符需要注意的问题+以前笔记+部分运算符+方法重载+变量赋值+构造器的作用+package关键字</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/personal-blog-wzz/about" rel="external nofollow noreferrer">牙牙</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/08/14/%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95+super+%E6%9E%9A%E4%B8%BE+%E5%8C%85%E8%A3%85%E7%B1%BB+%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F+%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/08/14/%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95+super+%E6%9E%9A%E4%B8%BE+%E5%8C%85%E8%A3%85%E7%B1%BB+%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F+%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/personal-blog-wzz/tags/java-%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80-spring-tomcat-maven/">
+                                    <span class="chip bg-color">java 开发语言 spring tomcat maven</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/personal-blog-wzz/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/personal-blog-wzz/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/personal-blog-wzz/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/personal-blog-wzz/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/personal-blog-wzz/libs/valine/av-min.js"></script>
+<script src="/personal-blog-wzz/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'gn5OhWih9iuVIbJm86pK8ctI-9Nh9j0Va',
+        appKey: '7gw3kUOgKtar8z6ddSMduP63',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '来填写友善的评论'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/personal-blog-wzz/2022/08/18/%E5%B8%B8%E7%94%A8dos%E5%91%BD%E4%BB%A4+%E5%85%B3%E9%94%AE%E5%AD%97%E4%BF%9D%E7%95%99%E5%AD%97+%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83+%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B+%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B+%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2+%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98+%E4%BB%A5%E5%89%8D%E7%AC%94%E8%AE%B0+%E9%83%A8%E5%88%86%E8%BF%90%E7%AE%97%E7%AC%A6+%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD+%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC+%E6%9E%84%E9%80%A0%E5%99%A8%E7%9A%84%E4%BD%9C%E7%94%A8+package%E5%85%B3%E9%94%AE%E5%AD%97/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/personal-blog-wzz/medias/featureimages/4.jpg" class="responsive-img" alt="常用dos命令+关键字保留字+命名规范+基本数据类型+引用数据类型+基本数据类型转换+算术运算符需要注意的问题+以前笔记+部分运算符+方法重载+变量赋值+构造器的作用+package关键字">
+                        
+                        <span class="card-title">常用dos命令+关键字保留字+命名规范+基本数据类型+引用数据类型+基本数据类型转换+算术运算符需要注意的问题+以前笔记+部分运算符+方法重载+变量赋值+构造器的作用+package关键字</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/personal-blog-wzz/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/personal-blog-wzz/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/personal-blog-wzz/2022/08/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84+java%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89+%E8%BF%9B%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/personal-blog-wzz/medias/featureimages/14.jpg" class="responsive-img" alt="数据结构+java基础（1）+进制之间的转换">
+                        
+                        <span class="card-title">数据结构+java基础（1）+进制之间的转换</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/personal-blog-wzz/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/personal-blog-wzz/tags/java-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">java 经验分享 数据结构 推荐算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/personal-blog-wzz/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/personal-blog-wzz/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/personal-blog-wzz/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7767085361"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.9'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/personal-blog-wzz/libs/aplayer/APlayer.min.js"></script>
+<script src="/personal-blog-wzz/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:2295908251@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2295908251" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2295908251" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/personal-blog-wzz/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/personal-blog-wzz/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/personal-blog-wzz/libs/materialize/materialize.min.js"></script>
+    <script src="/personal-blog-wzz/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/personal-blog-wzz/libs/aos/aos.js"></script>
+    <script src="/personal-blog-wzz/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/personal-blog-wzz/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/personal-blog-wzz/js/matery.js"></script>
+    <script src="/personal-blog-wzz/libs/others/sakura.js"></script>
+    <script type="text/javascript"> var OriginTitile = document.title, st; 
+        document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+        
+
+    
+
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/personal-blog-wzz/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/personal-blog-wzz/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/personal-blog-wzz/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/personal-blog-wzz/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+</html>

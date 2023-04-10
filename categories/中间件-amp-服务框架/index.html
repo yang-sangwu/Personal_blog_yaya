@@ -1,0 +1,1596 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="分类: 中间件&amp;amp;服务框架, 牙牙的个人博客">
+    <meta name="description" content="牙牙的个人博客">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>分类: 中间件&amp;amp;服务框架 | 牙牙的个人博客</title>
+    <link rel="icon" type="image/png" href="/personal-blog-wzz/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/my.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/personal-blog-wzz/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/personal-blog-wzz/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/reward.css">
+    
+
+
+
+    <script src="/personal-blog-wzz/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+ 
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+</script>
+
+ 
+<body>
+    
+        <div id="loading-container">
+             <p class="loading-text">嘘~  正在从服务器偷取页面 . . . </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+                    
+                    <img src="/personal-blog-wzz/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">牙牙的个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/personal-blog-wzz/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">牙牙的个人博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                牙牙的个人博客
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="/personal-blog-wzz/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Never really desperate, only the lost of the soul",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/personal-blog-wzz/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+
+    
+
+<div id="category-cloud" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
+            <div class="tag-chips">
+                
+                
+                
+                <a href="/personal-blog-wzz/categories/%E6%80%BB%E7%BB%93%EF%BC%88%E9%9D%9E%E6%8A%80%E6%9C%AF%E6%96%87%EF%BC%89/" title="总结（非技术文）: 13">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">总结（非技术文）
+                        <span class="tag-length">13</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/java%E5%9F%BA%E7%A1%80/" title="java基础: 10">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">java基础
+                        <span class="tag-length">10</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/%E6%8A%A5%E9%94%99/" title="报错: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">报错
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" title="中间件&amp;服务框架: 14">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #E8F8F5;">中间件&amp;服务框架
+                        <span class="tag-length">14</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" title="java开发框架: 18">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">java开发框架
+                        <span class="tag-length">18</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/IOS/" title="IOS: 12">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">IOS
+                        <span class="tag-length">12</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/mac/" title="mac: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">mac
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/%E7%AE%97%E6%B3%95/" title="算法: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">算法
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/PS/" title="PS: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">PS
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/personal-blog-wzz/categories/%E5%85%B6%E4%BB%96/" title="其他: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">其他
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2023/04/01/linux%E5%AE%89%E8%A3%85tomcat%EF%BC%88docker%EF%BC%89/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/1.jpg" class="responsive-img" alt="linux安装tomcat（docker）">
+                            
+                            <span class="card-title">linux安装tomcat（docker）</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+在终端输入，在docker hub上面查找tomcat镜像
+docker search tomcat
+
+
+从docker hub上拉取tomcat镜像到本地
+docker pull tomcat
+
+
+查看是否有拉取到的tomcat
+do
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/docker-tomcat-linux/">
+                            <span class="chip bg-color">docker tomcat linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2023/03/30/%E6%B5%85%E8%81%8ADocker/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/10.jpg" class="responsive-img" alt="浅聊Docker">
+                            
+                            <span class="card-title">浅聊Docker</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+目录
+文档
+docker简介
+docker的下载与安装
+在自己服务器上查看服务器内核版本信息
+先安装gcc环境
+设置stable镜像仓库
+更新yum软件包索引
+安装docker ce
+查看自己的docker安装地址
+测试
+查看docke
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/docker-%E8%BF%90%E7%BB%B4-linux/">
+                            <span class="chip bg-color">docker 运维 linux</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2023/03/26/Sentinel%E6%8C%81%E4%B9%85%E5%8C%96%E8%A7%84%E5%88%99/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/5.jpg" class="responsive-img" alt="Sentinel持久化规则">
+                            
+                            <span class="card-title">Sentinel持久化规则</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+将限流配置规则持久化进nacos保护，只要刷新8401某个rest地址，sentinel控制台的流控规则就能看到，只要nacos里main的配置不能删除，针对8401上sentinel上的流控规则持续有效。
+对8401进行操作:
+
+&l
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/sentinel-java-%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">
+                            <span class="chip bg-color">sentinel java 开发语言</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2023/03/23/%E8%81%8A%E8%81%8ASentinel/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/10.jpg" class="responsive-img" alt="聊聊Sentinel">
+                            
+                            <span class="card-title">聊聊Sentinel</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+目录
+Sentinel的下载
+Sentinel的启动
+Sentinel介绍
+Sentinel 的历史
+Sentinel 基本概念
+资源
+规则
+更改sentinel启动端口
+
+Sentinel官网：
+GitHub - alibaba&#x
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/sentinel-%E4%BA%91%E5%8E%9F%E7%94%9F-java/">
+                            <span class="chip bg-color">sentinel 云原生 java</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2023/03/22/%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E6%90%AD%E5%BB%BAnacos%E9%9B%86%E7%BE%A4---%E8%AE%B0%E5%BD%95%E6%88%91%E7%9A%84%E5%BF%83%E9%85%B8%E5%8E%86%E7%A8%8B/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/15.jpg" class="responsive-img" alt="在服务器上搭建nacos集群---记录我的心酸历程">
+                            
+                            <span class="card-title">在服务器上搭建nacos集群---记录我的心酸历程</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+目录
+一，nacos的下载，安装与启动
+有一些需要注意的事项：
+单机启动（linux）：
+二，集群配置
+三，集群配置过程中出现的问题
+
+搭建集群需要具备JDK环境，1个Nginx+3个nacos注册中心+1个mysql，集群按正常来说应
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/java-%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">
+                            <span class="chip bg-color">java 开发语言</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2023/03/09/Feign/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/2.jpg" class="responsive-img" alt="Feign">
+                            
+                            <span class="card-title">Feign</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+而Feign则会完全代理HTTP请求，我们只需要像调用方法一样调用它就可以完成服务请求及相关处理。Feign整合了Ribbon和Hystrix，可以让我们不再需要显式地使用这两个组件。
+Feign具有如下特性：支持可插拔的HTTP编码器
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-09
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/eureka-java-spring-cloud/">
+                            <span class="chip bg-color">eureka java spring cloud</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2022/12/30/nacos%20mac/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/6.jpg" class="responsive-img" alt="nacos mac">
+                            
+                            <span class="card-title">nacos mac</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+目录
+一.nacos的下载
+二.nacos的启动与终止
+三.进入可视化页面
+
+一.nacos的下载进入官网：home
+
+
+朝下翻
+
+
+
+下载一点几版本的，2点几的已经停止更新了。
+将下载好的文件放入一个没有中文名称的目录下
+快捷通道：R
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/java-%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/">
+                            <span class="chip bg-color">java 开发语言</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2022/11/23/%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9Fminio/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/2.jpg" class="responsive-img" alt="分布式文件存储系统minio">
+                            
+                            <span class="card-title">分布式文件存储系统minio</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+结构化数据：也称作行数据，是由二维表结构来逻辑表达和实现的数据，严格地遵循数据格式与长度规范，主要通过关系型数据库进行存储和管理。
+特点：高度组织化和格式化，可以用二维表结构来逻辑表达和实现的数据。
+存储形式：关系型数据库
+非结构化数据
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-minio-java/">
+                            <span class="chip bg-color">数据库 minio java</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2022/11/11/%E6%B5%85%E8%81%8A%E4%B8%80%E4%B8%8BNginx/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/2.jpg" class="responsive-img" alt="浅聊一下Nginx">
+                            
+                            <span class="card-title">浅聊一下Nginx</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+目录
+Nginx的下载与安装
+去Nginx官网安装：nginx news
+直接进入下载页面进行安装
+直接安装：
+在服务器上使用命令对nginx的安装过程
+Nginx命令
+Nginx配置文件结构
+Nginx配置文件（conf&#x2F;n
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/nginx-%E8%BF%90%E7%BB%B4-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                            <span class="chip bg-color">nginx 运维 服务器</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2022/11/03/%E4%BC%98%E5%8C%96------%E8%81%8A%E8%81%8A%E7%BC%93%E5%AD%98/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/6.jpg" class="responsive-img" alt="优化------聊聊缓存">
+                            
+                            <span class="card-title">优化------聊聊缓存</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+目录
+1.创建仓库
+2.提交到远程仓库
+3.创建分支
+4.环境配置
+5.缓存
+1.短信验证码缓存
+2.数据缓存
+1.对数据进行缓存
+2.清除缓存
+6.合并分支
+方法一：使用git命令合并
+方法二：
+7.qq邮箱实现验证码的发送
+1.在q
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/git-java-github-redis-intellij-idea/">
+                            <span class="chip bg-color">git java github redis intellij-idea</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2022/10/30/redis%E7%9A%84redis.config%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%86%85%E5%AE%B9+10.30%E6%97%A5%E4%B9%8B%E5%89%8D%E7%9A%84%E6%80%BB%E7%BB%93/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/10.jpg" class="responsive-img" alt="redis的redis.config文件配置与内容+10.30日之前的总结">
+                            
+                            <span class="card-title">redis的redis.config文件配置与内容+10.30日之前的总结</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+参考博客：redis.conf的一些配置+密码的设置（mac）+个人总结_雾喔的博客-CSDN博客_redis密码配置文件
+这个是初始的redis.config的内容
+# Redis configuration file example
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-30
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+                            <span class="chip bg-color">经验分享</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/personal-blog-wzz/2022/10/21/git%E5%9C%A8idea%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8+%E7%BB%88%E6%AD%A2%E7%AB%AF%E5%8F%A3%E8%BF%9B%E7%A8%8Bmac/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/personal-blog-wzz/medias/featureimages/12.jpg" class="responsive-img" alt="git在idea中的使用+终止端口进程mac">
+                            
+                            <span class="card-title">git在idea中的使用+终止端口进程mac</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+
+git在idea中的使用推荐博客：
+提交到远程仓库_雾喔的博客-CSDN博客_提交到远程仓库
+在 IDEA 中使用 Git 图文教程_华仔仔coding的博客-CSDN博客_idea git
+获取git仓库：
+方式一：
+在终端输入
+gi
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    中间件&amp;服务框架
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/personal-blog-wzz/tags/macos-1024%E7%A8%8B%E5%BA%8F%E5%91%98%E8%8A%82/">
+                            <span class="chip bg-color">macos 1024程序员节</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+</main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/personal-blog-wzz/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6-amp-%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/personal-blog-wzz/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7767085361"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.9'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/personal-blog-wzz/libs/aplayer/APlayer.min.js"></script>
+<script src="/personal-blog-wzz/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:2295908251@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2295908251" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2295908251" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/personal-blog-wzz/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/personal-blog-wzz/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/personal-blog-wzz/libs/materialize/materialize.min.js"></script>
+    <script src="/personal-blog-wzz/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/personal-blog-wzz/libs/aos/aos.js"></script>
+    <script src="/personal-blog-wzz/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/personal-blog-wzz/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/personal-blog-wzz/js/matery.js"></script>
+    <script src="/personal-blog-wzz/libs/others/sakura.js"></script>
+    <script type="text/javascript"> var OriginTitile = document.title, st; 
+        document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+        
+
+    
+
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/personal-blog-wzz/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/personal-blog-wzz/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/personal-blog-wzz/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/personal-blog-wzz/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+</html>

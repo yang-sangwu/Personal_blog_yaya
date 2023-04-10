@@ -1,0 +1,1555 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="数据结构+java基础（1）+进制之间的转换, 牙牙的个人博客">
+    <meta name="description" content="
+
+数据结构分类：
+**        逻辑结构分类：**
+        1.集合结构：集合结构中数据元素除了属于同一个集合外，他们之间没有任何其他的关系。
+        2.线性结构：线性结构中的数据元素之间存在一对一的关系。
+   ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>数据结构+java基础（1）+进制之间的转换 | 牙牙的个人博客</title>
+    <link rel="icon" type="image/png" href="/personal-blog-wzz/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/my.css">
+<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/personal-blog-wzz/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/personal-blog-wzz/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/reward.css">
+    
+
+
+
+    <script src="/personal-blog-wzz/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+ 
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+</script>
+
+ 
+<body>
+    
+        <div id="loading-container">
+             <p class="loading-text">嘘~  正在从服务器偷取页面 . . . </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+                    
+                    <img src="/personal-blog-wzz/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">牙牙的个人博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/personal-blog-wzz/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">牙牙的个人博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/personal-blog-wzz/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">数据结构+java基础（1）+进制之间的转换</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/personal-blog-wzz/tags/java-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">java 经验分享 数据结构 推荐算法</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/personal-blog-wzz/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                java基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-13
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/personal-blog-wzz/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <span id="more"></span>
+
+<h3 id="数据结构分类："><a href="#数据结构分类：" class="headerlink" title="数据结构分类："></a><strong>数据结构分类：</strong></h3><hr>
+<p>**        逻辑结构分类：**</p>
+<p>        1.集合结构：集合结构中数据元素除了属于同一个集合外，他们之间没有任何其他的关系。</p>
+<p>        2.线性结构：线性结构中的数据元素之间存在一对一的关系。</p>
+<p>        3.树形结构：树形结构中的数据元素之间存在一对多的层次关系。</p>
+<p>        4.图形结构：图形结构的数据元素是多对多的关系</p>
+<hr>
+<p>**        物理结构分类：**</p>
+<hr>
+<p>        1.顺序存储结构        比如：数组</p>
+<p>        2.链式存储结构       </p>
+<hr>
+<h3 id="位运算符-amp"><a href="#位运算符-amp" class="headerlink" title="位运算符&amp;"></a>位运算符&amp;</h3><p>        定义：参加运算的两个数据，按二进制位进行”与”运算。</p>
+<p>        当&amp;左右同时为true的时候结果才为true</p>
+<p>        <strong>&amp;其他用途：</strong></p>
+<p>        <strong>1.清零</strong></p>
+<p>        如果想将一个单元清零，即使其全部二进制位为0，只要与一个各位都为零的数值相与，结果为零。</p>
+<p>        <strong>2.取一个数的指定位</strong></p>
+<p>比如取数 X&#x3D;1010 1110 的后4位，只需要另找一个数Y，令Y的后4位为1，其余位为0，即Y&#x3D;0000 1111，然后将X与Y进行按位与运算（X&amp;Y&#x3D;0000 1110）即可得到X的指定位。</p>
+<p>        3.判断奇偶</p>
+<p>只要根据最未位是0还是1来决定，为0就是偶数，为1就是奇数。因此可以用if ((a &amp; 1) &#x3D;&#x3D; 0)代替if (a % 2 &#x3D;&#x3D; 0)来判断a是不是偶数（参加运算的两个数据，按二进制位进行”与”运算）。</p>
+<blockquote>
+<p>借鉴博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46540009/article/details/115561876" title="位运算">位运算</a></p>
+</blockquote>
+<h3 id="右移-gt-gt"><a href="#右移-gt-gt" class="headerlink" title="右移(&gt;&gt;)"></a>右移(&gt;&gt;)</h3><p>        以1234这个数值为例，1234右移1位即： 1234&gt;&gt;1</p>
+<p>        （1234转换成二进制）1234右移一位（移除），左边用0补上。</p>
+<p><img src="https://img-blog.csdnimg.cn/883b04bcd4ce416c9a988166d6aa5fd2.png" alt="883b04bcd4ce416c9a988166d6aa5fd2.png"></p>
+<p>         右移后得到的值为 617 和int 类型的数据617除以2取整所得的值一样，所以有些时候也会被用来替代除2操作。同时，对于超过32位的位移，和左移运算符一样，，会先进行位数求余数。</p>
+<p>        例如：</p>
+<blockquote>
+<p>if((b &amp; 1) &#x3D;&#x3D; 1)</p>
+</blockquote>
+<p>=&#x3D;</p>
+<blockquote>
+<p>if(b % 2 &#x3D;&#x3D;1)</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>b &#x3D; b &gt;&gt; 1</p>
+</blockquote>
+<p>=&#x3D;</p>
+<blockquote>
+<p>b &#x3D; b &#x2F; 2</p>
+</blockquote>
+<h3 id="进制与进制间的转化："><a href="#进制与进制间的转化：" class="headerlink" title="进制与进制间的转化："></a>进制与进制间的转化：</h3><p>**        关于进制**</p>
+<p>        所有数字在计算机底层都以二进制形式存在。</p>
+<p>对于整数，有 <strong>四种表示方式</strong>：</p>
+<p>二进制 (binary)：0,1 ，满 2 进 1. 以 0b 或 0B 开头。</p>
+<p>十进制 (decimal)：0-9 ，满 10 进 1。</p>
+<p>八进制 (octal)：0-7 ，满 8 进 1. 以数字 0 开头表示。</p>
+<p>十六进制(hex)：0-9及A-F，满16进1. 以0x或0X开头表示。此处的A-F 不区分大小写。如：0x21AF +1&#x3D; 0X21B0。</p>
+<p> </p>
+<p>Java 整数常量默认是 int 类型，当用二进制定义整数时，其第 32 位是 符号位；当是 long 类型时，二进制默认占 64 位，第 64 位是符号位。</p>
+<p>在Integer类型中有静态方法toBinaryString(int i),这个方法的功能将十进制转换为二进制输出。</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"1234二进制数为"</span> <span class="token operator">+</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toBinaryString</span><span class="token punctuation">(</span><span class="token number">1234</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<pre class="language-none"><code class="language-none">1234二进制数为10011010010</code></pre>
+
+<p><strong>同理还有很多函数：</strong></p>
+<p>十进制转成十六进制:<br>Integer.toHexString(int i)<br>十进制转成八进制<br>Integer.toOctalString(int i)<br>十进制转成二进制<br>Integer toBinaryString(int i)<br>十六进制转成十进制<br>Integer.valueOf(“FFFF”,1 6).toString()<br>八进制转成十进制<br>Integer.valueOf(“876” ,8).toString()<br>二进制转十进制<br>Integer.valueOf(“0101”,2).toString()</p>
+<p>（二进制转成十进制乘以 2 的幂数， 十进制转成二进制除以 2 取余数。 ）</p>
+<h3 id="java简史（为了这离谱的发文助手）："><a href="#java简史（为了这离谱的发文助手）：" class="headerlink" title="java简史（为了这离谱的发文助手）："></a>java简史（为了这离谱的发文助手）：</h3><p>1991 年 Green 项目，开发语言最初命名为 Oak ( 橡树 )</p>
+<p>1994 年开发组意识到 Oak 非常适合于互联网</p>
+<p>1996 年发布 JDK 1.0，约 8.3 万个网页应用 Java 技术来制作</p>
+<p>1997 年发布 JDK 1.1，JavaOne 会议召开，创当时全球同类会议规模之最</p>
+<p>1998 年发布 JDK 1.2，同年发布企业平台 J2EE</p>
+<p>1999 年 Java 分成 J2SE、J2EE 和 J2ME，JSP&#x2F;Servlet 技术诞生</p>
+<p>2004 年发布里程碑式版本：JDK 1.5，为突出此版本的重要性，更名为 JDK 5.0</p>
+<p>2005 年 J2SE -&gt; JavaSE，J2EE -&gt; JavaEE，J2ME -&gt; JavaME</p>
+<p>2009 年 Oracle 公司收购 SUN，交易价格 74 亿美元</p>
+<p>2011 年发布 JDK 7.0</p>
+<p>2014 年发布 JDK 8.0，是继 JDK 5.0 以来变化最大的版本</p>
+<p>2017 年发布 JDK 9.0，最大限度实现模块化</p>
+<p>2018 年 3 月发布 JDK 10.0，版本号也称为 18.3</p>
+<p>2018 年 9 月发布 JDK 11.0，版本号也称为 18.9</p>
+<p>2019 年 3 月 20 日 Java SE 12 发布。Java 12 是短期支持版本。</p>
+<p>2019 年 9 月 23 日 Java SE 13 发布，此版本中添加了“文本块”，文本块是 一个多行字符串文字，避免对大多数转义序列的需要，以可预测的方式自动 格式化字符串，并在需要时让开发人员控制格式。</p>
+<p>上一张从尚硅谷那里拿过来的一张java导图（没有水印）：</p>
+<p><img src="https://img-blog.csdnimg.cn/6214a08c0d95452983db31f51e0d11e0.png" alt="6214a08c0d95452983db31f51e0d11e0.png"></p>
+<p> <a target="_blank" rel="noopener" href="https://b23.tv/6FtWZ3H" title="尚硅谷">尚硅谷</a></p>
+<p>上一页：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Hubery_sky/article/details/126161408" title="分页查询与集合分页查询与html基础知识">分页查询与集合分页查询与html基础知识</a>​​​​​​​</p>
+<p>下一页：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Hubery_sky/article/details/126328850?spm=1001.2014.3001.5501" title="请求方法+super+枚举+包装类+正则表达式+学习资料">请求方法+super+枚举+包装类+正则表达式+学习资料</a></p>
+<p>个人总结：</p>
+<p>最近几天比较emo，我们这里的疫情又加重了，学习上的压力也变大了，不知道什么时候考核，只能先准备着，算法虽然也有在写，但是有时候会因为比较忙，而忽略当天的算法，只能第二天补回来。</p>
+<p>最近想明白了一些东西，心也微微沉了下来，平日里懒散惯了，忘记了以前的自己了，也想起来了以前的自己可没有现在这么蠢，以前多多少少心思还是比较缜密的，现在，自从进入大学之后，开始变得有些许懒散了，平日里也不经常每隔一段时间对自己过往的行为进行反思总结了，怎么说呢，有点像，过了很长一段时间之后再去看自己以前写的东西，会突然惊叹，以前的自己文笔怎么这么好，现在的文笔，怎么也写不出当时的了，现在的性格等一些东西就是这样吧。</p>
+<p>仔细想想，自己以前很长一段时间里，多少有点盲目自大了。</p>
+<p>说说最近的状态吧，之前，我有很多想要抓住的东西，可总是抓不住，慢慢的，也就习惯了，抓不住就抓不住了， 抓不住的东西，毕竟连伸手都是多余的，我也知道，自己有时候是真的三分钟热度，不得要浇灭自己的热情的时候，也比较果断，做的多了，有时候就会觉得自己有点太绝情了，想想都感觉有些许离谱。</p>
+<p>换个话题，现在是晚上22:39，大多数人应该都睡了，家人们也都进入了梦乡。</p>
+<p>还是想反思一下最近的情绪，情绪变得很平淡，有点冷漠，和别人聊天的时候，因为是线上聊天，线上我好像还是一个乐观的聊天方式，屏幕这边的我却大部分都是冷着一张脸，提不起兴趣来，感觉很多东西都是多余的，究根结底，还是上次竞选职位留下的问题，我深深的emo了。</p>
+<p>生活还得继续，我好歹来到了这个世界上，虽然不清楚人死后会去哪里，但在活着的这段时间里，我都要格外珍惜，为自己的梦想，愿想努力，这样走到最后，我就能不愧对自己的说，我很满意。</p>
+<p>讲了这么多，还是因为没有人听自己倾诉，所以在博客这里倾诉自己的不快，我自己就是一个挺好的聆听者，可是真正愿意聆听我的人却少之又少，真正理解我懂我的人又有多少，寥寥无几吧，白驹过隙，有一点从未改变，我还是那个追风的人，追求自由的灵魂，人的一生说长不长，能遇到一个知己难之又难。</p>
+<p>说了这么多，最后的最后，还是收拾收拾自己的行囊，继续向前走，过去无可挽回，未来仍旧可期，以后的路，我都愿意认真走下去。清理内心的杂草，丢掉多余的东西，一身轻装，去迎接每天的太阳。</p>
+<p>现在是早上7.47，想了很多，昨天晚上可以说是稍微放肆了一下，也是一个小测试，我在两个群里刷屏(刷屏容易打扰到别人，虽然别人都免打了)，在最后一个群里，从僵尸讲到我的小说，我认真反思了一下，为什么会刷屏，因为焦虑，因为内心的情绪无从发泄，焦虑产生，用刷屏发泄，之后进行反思总结，对自己的了解更多了一些，心情emo焦虑的时候我会感觉到不安，我会刷屏，带着小心翼翼的刷屏，小心的发泄自己的不安，因为向来缺乏安全感，最后得出，刷屏改变不了什么，而且浪费时间，不如早点休息，出去散散步，舒缓心情。</p>
+<p>最后发现，一切又都绕到了原点，在我现在的那个圈子里面，没有真正的所谓朋友，是真的了解我关心我，那里的每个人似乎最在意的都是自己，这些也都情有可原，的确不存在什么义务非要对没有亲缘关系的人示好，无条件的支持与关心，原本索取我想要的东西的方向都错了，在那个圈子里，我没有真正意义上的朋友，每个人都在意着自己，也没有义务要求“朋友”都对自己了解关心。</p>
+<p>最关心自己的还是自己的家人，家人是无可代替的，朋友更多的都是过客，他们只是陪你走了一小段路，之后下站，可能再也不见。</p>
+<p>我也知道无效社交，我也是一个喜欢试探的人，我喜欢从细节里面看人，最后试探出的结果是什么呢，还是自己自找没趣，也许会有人说，自己是什么人，身边的就是什么人，可是你怎么排除一些人是因为一些原因不得已在一起的。</p>
+<p>以前向往的东西，现在得到之后才发现，也不过如此，也许是因为现在得到的不是我真正想要的，我也知道断舍离，在舍不得孩子时候我大部分会继续已有的状态，等弊大于利的时候或者自己腻的时候按着从前的惯例，我也不会留恋，有时候发现，自己有时候太过绝情，真的一点都不在意吗，怎么可能会不在意，但我本来就是一个自尊心强又孤傲的人，这些都不允许我去回头，自己做过的决定，我很少后悔，大部分时候，后悔解决不了问题，只能在现有的时间里将损失降到最小，我还有时间，我也还年轻，我未来会经历的还会很多，也许我会有朋友看到这篇博客，也许会没有，当然 很感谢你能看到这里，认真听我倾诉。</p>
+<p>人生还是应该积极乐观的，我没有的东西我会去争取，朋友也择良木而栖，生活是面镜子，我也知道自己的性格，似乎对每个人都好，未来的路还很长，能陪着我走的人少之又少，所以，未来我会做好一个人走很长一段路的准备。</p>
+<p>试探的越多，付出的希望越大，投入的感情越多，得到的失望也就越大，不如从一开始就把筹码娅在自己身上，精力放在自己身上，自己作为自己最大的筹码，赌输的可能性也会大大降低。</p>
+<p>还有，对自己好点，熬夜真的很伤身体，别把注意力都放在别人身上，时刻保持清醒，沉默大部分时候都是正确的选择。</p>
+<p>也许过一段时间我再看到这些，我会觉得幼稚可笑，但也都是题外话了，这是情绪的一次记录，多少还是有教育意义的。</p>
+<p>就这样吧</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/personal-blog-wzz/about" rel="external nofollow noreferrer">牙牙</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/08/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84+java%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89+%E8%BF%9B%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/">http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/08/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84+java%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89+%E8%BF%9B%E5%88%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/personal-blog-wzz/tags/java-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">java 经验分享 数据结构 推荐算法</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/personal-blog-wzz/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/personal-blog-wzz/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/personal-blog-wzz/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/personal-blog-wzz/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/personal-blog-wzz/libs/valine/av-min.js"></script>
+<script src="/personal-blog-wzz/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'gn5OhWih9iuVIbJm86pK8ctI-9Nh9j0Va',
+        appKey: '7gw3kUOgKtar8z6ddSMduP63',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '来填写友善的评论'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/personal-blog-wzz/2022/08/14/%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95+super+%E6%9E%9A%E4%B8%BE+%E5%8C%85%E8%A3%85%E7%B1%BB+%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F+%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/personal-blog-wzz/medias/featureimages/11.jpg" class="responsive-img" alt="请求方法+super+枚举+包装类+正则表达式+学习资料">
+                        
+                        <span class="card-title">请求方法+super+枚举+包装类+正则表达式+学习资料</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/personal-blog-wzz/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/personal-blog-wzz/tags/java-%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80-spring-tomcat-maven/">
+                        <span class="chip bg-color">java 开发语言 spring tomcat maven</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/personal-blog-wzz/2022/08/04/%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E4%B8%8E%E9%9B%86%E5%90%88%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2%E4%B8%8Ehtml%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/personal-blog-wzz/medias/featureimages/6.jpg" class="responsive-img" alt="分页查询与集合分页查询与html基础知识">
+                        
+                        <span class="card-title">分页查询与集合分页查询与html基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/personal-blog-wzz/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    java开发框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/personal-blog-wzz/tags/java-servlet-%E6%95%B0%E6%8D%AE%E5%BA%93-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB-spring-boot/">
+                        <span class="chip bg-color">java servlet 数据库 经验分享 spring boot</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/personal-blog-wzz/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/personal-blog-wzz/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/personal-blog-wzz/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="7767085361"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.9'
+                   list-folded='false'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/personal-blog-wzz/libs/aplayer/APlayer.min.js"></script>
+<script src="/personal-blog-wzz/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:2295908251@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2295908251" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2295908251" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/personal-blog-wzz/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/personal-blog-wzz/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/personal-blog-wzz/libs/materialize/materialize.min.js"></script>
+    <script src="/personal-blog-wzz/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/personal-blog-wzz/libs/aos/aos.js"></script>
+    <script src="/personal-blog-wzz/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/personal-blog-wzz/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/personal-blog-wzz/js/matery.js"></script>
+    <script src="/personal-blog-wzz/libs/others/sakura.js"></script>
+    <script type="text/javascript"> var OriginTitile = document.title, st; 
+        document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
+    </script>
+        
+
+    
+
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/personal-blog-wzz/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/personal-blog-wzz/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/personal-blog-wzz/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/personal-blog-wzz/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+</html>
