@@ -30,7 +30,7 @@
 
 
     <title>Mybatis-plus实战项目演示+自定义元数据对象处理器+ws | 牙牙的个人博客</title>
-    <link rel="icon" type="image/png" href="/personal-blog-wzz/favicon.png">
+    <link rel="icon" type="image/png" href="/personal_blog_yaya/favicon.png">
     
 
 
@@ -38,31 +38,31 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/awesome/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/materialize/materialize.min.css">
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/aos/aos.css">
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/animate/animate.min.css">
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/matery.css">
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/my.css">
-<link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/dark.css" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/css/my.css">
+<link rel="stylesheet" type="text/css" href="/personal_blog_yaya/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-    <link rel="stylesheet" href="/personal-blog-wzz/libs/tocbot/tocbot.css">
-    <link rel="stylesheet" href="/personal-blog-wzz/css/post.css">
+    <link rel="stylesheet" href="/personal_blog_yaya/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/personal_blog_yaya/css/post.css">
 
 
 
 
     
-        <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/css/reward.css">
+        <link rel="stylesheet" type="text/css" href="/personal_blog_yaya/css/reward.css">
     
 
 
 
-    <script src="/personal-blog-wzz/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/personal_blog_yaya/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -202,6 +202,9 @@
 
  
 <body>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/firework.js"></script>
     
         <div id="loading-container">
              <p class="loading-text">嘘~  正在从服务器偷取页面 . . . </p> 
@@ -219,9 +222,9 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
-                <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+                <a href="/personal_blog_yaya/" class="waves-effect waves-light">
                     
-                    <img src="/personal-blog-wzz/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/personal_blog_yaya/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">牙牙的个人博客</span>
                 </a>
@@ -233,7 +236,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/personal-blog-wzz/" class="waves-effect waves-light">
+    <a href="/personal_blog_yaya/" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -244,7 +247,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+    <a href="/personal_blog_yaya/tags" class="waves-effect waves-light">
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
@@ -255,7 +258,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+    <a href="/personal_blog_yaya/categories" class="waves-effect waves-light">
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
@@ -266,7 +269,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+    <a href="/personal_blog_yaya/archives" class="waves-effect waves-light">
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
@@ -277,7 +280,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+    <a href="/personal_blog_yaya/about" class="waves-effect waves-light">
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
@@ -288,7 +291,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+    <a href="/personal_blog_yaya/contact" class="waves-effect waves-light">
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
@@ -299,7 +302,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+    <a href="/personal_blog_yaya/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
@@ -325,7 +328,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/personal-blog-wzz/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/personal_blog_yaya/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">牙牙的个人博客</div>
         <div class="logo-desc">
@@ -339,7 +342,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/personal-blog-wzz/" class="waves-effect waves-light">
+		<a href="/personal_blog_yaya/" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -350,7 +353,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/personal-blog-wzz/tags" class="waves-effect waves-light">
+		<a href="/personal_blog_yaya/tags" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
@@ -361,7 +364,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/personal-blog-wzz/categories" class="waves-effect waves-light">
+		<a href="/personal_blog_yaya/categories" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
@@ -372,7 +375,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/personal-blog-wzz/archives" class="waves-effect waves-light">
+		<a href="/personal_blog_yaya/archives" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
@@ -383,7 +386,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/personal-blog-wzz/about" class="waves-effect waves-light">
+		<a href="/personal_blog_yaya/about" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
@@ -394,7 +397,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/personal-blog-wzz/contact" class="waves-effect waves-light">
+		<a href="/personal_blog_yaya/contact" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
@@ -405,7 +408,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/personal-blog-wzz/friends" class="waves-effect waves-light">
+		<a href="/personal_blog_yaya/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
@@ -430,7 +433,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/personal-blog-wzz/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/personal_blog_yaya/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -459,7 +462,7 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/personal-blog-wzz/tags/mybatis-java-%E6%95%B0%E6%8D%AE%E5%BA%93-WebSocket-%E5%85%83%E6%95%B0%E6%8D%AE/">
+                            <a href="/personal_blog_yaya/tags/mybatis-java-%E6%95%B0%E6%8D%AE%E5%BA%93-WebSocket-%E5%85%83%E6%95%B0%E6%8D%AE/">
                                 <span class="chip bg-color">mybatis java 数据库 WebSocket 元数据</span>
                             </a>
                         
@@ -471,7 +474,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/personal-blog-wzz/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="post-category">
+                            <a href="/personal_blog_yaya/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="post-category">
                                 java开发框架
                             </a>
                         
@@ -501,7 +504,7 @@
 
         
         <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/personal-blog-wzz/libs/prism/prism.min.css">
+        <link rel="stylesheet" href="/personal_blog_yaya/libs/prism/prism.min.css">
         
 
         
@@ -1537,7 +1540,7 @@ mybatis-plus:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/personal-blog-wzz/about" rel="external nofollow noreferrer">牙牙</a>
+                    <a href="/personal_blog_yaya/about" rel="external nofollow noreferrer">牙牙</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -1547,7 +1550,7 @@ mybatis-plus:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/12/09/Mybatis-plus%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA+%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E5%99%A8+ws/">http://zezhengyyds.gitee.io/personal-blog-wzz/personal-blog-wzz/2022/12/09/Mybatis-plus%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA+%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E5%99%A8+ws/</a>
+                    <a href="http://yang-saiya.gitee.io/personal_blog_yaya/personal_blog_yaya/2022/12/09/Mybatis-plus%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA+%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E5%99%A8+ws/">http://yang-saiya.gitee.io/personal_blog_yaya/personal_blog_yaya/2022/12/09/Mybatis-plus%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E6%BC%94%E7%A4%BA+%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E5%99%A8+ws/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1560,7 +1563,7 @@ mybatis-plus:
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+                    <a href="/personal_blog_yaya/about" target="_blank">牙牙</a>
                     !
                 </span>
             </div>
@@ -1585,7 +1588,7 @@ mybatis-plus:
                     
                         <div class="article-tag">
                             
-                                <a href="/personal-blog-wzz/tags/mybatis-java-%E6%95%B0%E6%8D%AE%E5%BA%93-WebSocket-%E5%85%83%E6%95%B0%E6%8D%AE/">
+                                <a href="/personal_blog_yaya/tags/mybatis-java-%E6%95%B0%E6%8D%AE%E5%BA%93-WebSocket-%E5%85%83%E6%95%B0%E6%8D%AE/">
                                     <span class="chip bg-color">mybatis java 数据库 WebSocket 元数据</span>
                                 </a>
                             
@@ -1593,12 +1596,12 @@ mybatis-plus:
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/personal-blog-wzz/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="/personal_blog_yaya/libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/personal-blog-wzz/libs/share/js/social-share.min.js"></script>
+    <script src="/personal_blog_yaya/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1623,10 +1626,10 @@ mybatis-plus:
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/personal-blog-wzz/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/personal_blog_yaya/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/personal-blog-wzz/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/personal_blog_yaya/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1664,7 +1667,7 @@ mybatis-plus:
 
     #vcomments textarea {
         box-sizing: border-box;
-        background: url("/personal-blog-wzz/medias/comment_bg.png") 100% 100% no-repeat;
+        background: url("/personal_blog_yaya/medias/comment_bg.png") 100% 100% no-repeat;
     }
 
     #vcomments p {
@@ -1898,8 +1901,8 @@ mybatis-plus:
     </div>
 </div>
 
-<script src="/personal-blog-wzz/libs/valine/av-min.js"></script>
-<script src="/personal-blog-wzz/libs/valine/Valine.min.js"></script>
+<script src="/personal_blog_yaya/libs/valine/av-min.js"></script>
+<script src="/personal_blog_yaya/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1936,11 +1939,11 @@ mybatis-plus:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/personal-blog-wzz/2022/12/12/%E5%85%B3%E4%BA%8Emac%E4%B8%8A%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%9C%E8%A5%BF%E9%83%BD%E5%8F%98%E5%B0%8F%E4%BA%86/">
+                <a href="/personal_blog_yaya/2022/12/12/%E5%85%B3%E4%BA%8Emac%E4%B8%8A%E7%9A%84%E6%89%80%E6%9C%89%E4%B8%9C%E8%A5%BF%E9%83%BD%E5%8F%98%E5%B0%8F%E4%BA%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/personal-blog-wzz/medias/featureimages/5.jpg" class="responsive-img" alt="关于mac上的所有东西都变小了">
+                        <img src="/personal_blog_yaya/medias/featureimages/5.jpg" class="responsive-img" alt="关于mac上的所有东西都变小了">
                         
                         <span class="card-title">关于mac上的所有东西都变小了</span>
                     </div>
@@ -1959,7 +1962,7 @@ mybatis-plus:
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/personal-blog-wzz/categories/mac/" class="post-category">
+                            <a href="/personal_blog_yaya/categories/mac/" class="post-category">
                                     mac
                                 </a>
                             
@@ -1970,7 +1973,7 @@ mybatis-plus:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/personal-blog-wzz/tags/mac-macos/">
+                    <a href="/personal_blog_yaya/tags/mac-macos/">
                         <span class="chip bg-color">mac macos</span>
                     </a>
                     
@@ -1985,11 +1988,11 @@ mybatis-plus:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/personal-blog-wzz/2022/12/01/%E6%B5%85%E6%B5%85%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
+                <a href="/personal_blog_yaya/2022/12/01/%E6%B5%85%E6%B5%85%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/personal-blog-wzz/medias/featureimages/7.jpg" class="responsive-img" alt="浅浅的计算机网络知识">
+                        <img src="/personal_blog_yaya/medias/featureimages/7.jpg" class="responsive-img" alt="浅浅的计算机网络知识">
                         
                         <span class="card-title">浅浅的计算机网络知识</span>
                     </div>
@@ -2008,7 +2011,7 @@ mybatis-plus:
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/personal-blog-wzz/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="post-category">
+                            <a href="/personal_blog_yaya/categories/java%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="post-category">
                                     java开发框架
                                 </a>
                             
@@ -2019,7 +2022,7 @@ mybatis-plus:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/personal-blog-wzz/tags/%E7%BD%91%E7%BB%9C-tcp-ip-udp/">
+                    <a href="/personal_blog_yaya/tags/%E7%BD%91%E7%BB%9C-tcp-ip-udp/">
                         <span class="chip bg-color">网络 tcp/ip udp</span>
                     </a>
                     
@@ -2036,26 +2039,26 @@ mybatis-plus:
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/personal_blog_yaya/libs/codeBlock/codeBlockFuction.js"></script>
 
 
   <!-- 是否加载使用自带的 prismjs. -->
-  <script type="text/javascript" src="/personal-blog-wzz/libs/prism/prism.min.js"></script>
+  <script type="text/javascript" src="/personal_blog_yaya/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="/personal_blog_yaya/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/personal_blog_yaya/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/personal-blog-wzz/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="/personal_blog_yaya/libs/codeBlock/codeShrink.js"></script>
 
 
 
@@ -2077,7 +2080,7 @@ mybatis-plus:
 </div>
 
 
-<script src="/personal-blog-wzz/libs/tocbot/tocbot.min.js"></script>
+<script src="/personal_blog_yaya/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -2149,7 +2152,7 @@ mybatis-plus:
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/personal-blog-wzz/libs/aplayer/APlayer.min.css">
+        <link rel="stylesheet" href="/personal_blog_yaya/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -2186,8 +2189,8 @@ mybatis-plus:
     </div>
 </div>
 
-<script src="/personal-blog-wzz/libs/aplayer/APlayer.min.js"></script>
-<script src="/personal-blog-wzz/libs/aplayer/Meting.min.js"></script>
+<script src="/personal_blog_yaya/libs/aplayer/APlayer.min.js"></script>
+<script src="/personal_blog_yaya/libs/aplayer/Meting.min.js"></script>
 
     
 
@@ -2198,7 +2201,7 @@ mybatis-plus:
             
                 <span id="year">2019-2023</span>
             
-            <a href="/personal-blog-wzz/about" target="_blank">牙牙</a>
+            <a href="/personal_blog_yaya/about" target="_blank">牙牙</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -2249,7 +2252,7 @@ mybatis-plus:
 
 
 
-    <a href="/personal-blog-wzz/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <a href="/personal_blog_yaya/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fas fa-rss"></i>
     </a>
 
@@ -2360,7 +2363,7 @@ $(function () {
         });
     };
 
-    searchFunc('/personal-blog-wzz/search.xml', 'searchInput', 'searchResult');
+    searchFunc('/personal_blog_yaya/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -2396,13 +2399,14 @@ $(function () {
 </div>
 
 
-    <script src="/personal-blog-wzz/libs/materialize/materialize.min.js"></script>
-    <script src="/personal-blog-wzz/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/personal-blog-wzz/libs/aos/aos.js"></script>
-    <script src="/personal-blog-wzz/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/personal-blog-wzz/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/personal-blog-wzz/js/matery.js"></script>
-    <script src="/personal-blog-wzz/libs/others/sakura.js"></script>
+    <script src="/personal_blog_yaya/libs/materialize/materialize.min.js"></script>
+    <script src="/personal_blog_yaya/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/personal_blog_yaya/libs/aos/aos.js"></script>
+    <script src="/personal_blog_yaya/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/personal_blog_yaya/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/personal_blog_yaya/js/matery.js"></script>
+    <script src="/personal_blog_yaya/libs/others/sakura.js"></script>
+    <script src="/personal_blog_yaya/libs/others/fireworks.js"></script>
     <script type="text/javascript"> var OriginTitile = document.title, st; 
         document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) 
     </script>
@@ -2414,14 +2418,14 @@ $(function () {
     
 
     <!-- 雪花特效 -->
-    
+
 
     <!-- 鼠标星星特效 -->
-    
+
 
      
         <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/personal-blog-wzz/libs/others/TencentCaptcha.js"></script>
+        <script src="/personal_blog_yaya/libs/others/TencentCaptcha.js"></script>
         <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
@@ -2443,11 +2447,12 @@ $(function () {
     })();
 </script>
 
+    <!-- 
+    <script src="/personal_blog_yaya/libs/others/clicklove.js" async="async"></script>
+     -->
+ 
     
-    <script src="/personal-blog-wzz/libs/others/clicklove.js" async="async"></script>
-    
-    
-    <script async src="/personal-blog-wzz/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/personal_blog_yaya/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -2463,8 +2468,8 @@ $(function () {
     
 
     
-    <script src="/personal-blog-wzz/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/personal_blog_yaya/libs/instantpage/instantpage.js" type="module"></script>
     
-
+    
 </body>
 </html>
