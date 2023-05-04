@@ -241,8 +241,10 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #3fd9ff 0%, #5637c6 100%);
-    opacity: 0.8;
+    /*  background-image: url("https://ae01.alicdn.com/kf/H18a4b998752a4ae68b8e85d432a5aef0l.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("https://ae01.alicdn.com/kf/H21b5f6b8496141a1979a33666e1074d9x.jpg"); */
+  /* 图片可下载上传到自己的图床也可以删掉*/
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #49B1F5 100%);
+    /* opacity: 0.9; */
 }
 
 
@@ -259,7 +261,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background-image: linear-gradient(to right, #3fd9ff 0%, #5637c6 100%);
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #49B1F5 100%);
     opacity: 0.8;
 }
 
@@ -1910,7 +1912,7 @@ p.search-result-summary{
 }
 
 .top-scroll .btn-floating {
-    background-image: linear-gradient(to right, #3fd9ff 50%, #5637c6 100%);
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #49B1F5 100%);
     width: 48px;
     height: 48px;
 }
@@ -2296,3 +2298,12 @@ body.DarkMode .theme-btn:hover {
     font-weight: 900;
     color: #d9534f;
 }
+body {
+    cursor:url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
+          default;
+  }
+  a,
+  img {
+    cursor:url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
+          default;
+  }
